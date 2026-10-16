@@ -9,6 +9,3 @@
 ## 2. Hạn chế của bộ nhãn khảo sát (Ground Truth Limitations)
 - Bộ nhãn khảo sát hiện tại thu thập từ nhóm 15-30 người chơi cấp CLB nên vẫn mang tính chủ quan theo cảm giác tay cá nhân.
 - Chưa tách biệt được ảnh hưởng của loại cước đan (VD: Yonex Exbolt 63, BG66 Ultimax) và mức căng (kg) lên độ cứng và độ nảy thực tế khi đánh.
-
-## 3. Hướng dẫn chạy nhanh trên Windows
-Chỉ cần nháy đúp chuột vào file **`CHAY_NGAY.bat`** (hoặc chạy `streamlit run app/streamlit_app.py`).
