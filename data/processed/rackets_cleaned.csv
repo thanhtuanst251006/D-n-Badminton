@@ -1,0 +1,221 @@
+﻿title,brand,model,price_raw,weight_raw,balance_raw,stiffness_raw,source,price_vnd,weight_g,balance_score,stiffness_score,imputation_reason
+Vợt Cầu Lông Yonex Astrox 100ZZ Chính Hãng (ShopVNB),Yonex,Astrox 100ZZ G1 [ShopVNB],4.293.000 ₫,4U (83g),,,ShopVNB,4293000,83.0,3.0,3.0,Thiếu điểm cân bằng -> Mặc định Cân bằng (3.0); Thiếu độ cứng -> Mặc định Trung bình (3.0)
+Vợt Cầu Lông Yonex Astrox 88D Pro Chính Hãng (FBSport),Yonex,Astrox 88D Pro G1 [FBSport],3.788.000 ₫,4U (83g),Siêu nặng đầu,Cứng,FBSport,3788000,83.0,4.8,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Astrox 88S Pro Chính Hãng (ChiakiVN),Yonex,Astrox 88S Pro G1 [ChiakiVN],3.904.000 ₫,4U (83g),Nặng đầu,Cứng,ChiakiVN,3904000,83.0,4.3,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Arcsaber 11 Pro Chính Hãng (ShopVNB),Yonex,Arcsaber 11 Pro G1 [ShopVNB],3.966.000 ₫,4U (83g),Cân bằng,Cứng,ShopVNB,3966000,83.0,3.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Nanoflare 1000Z Chính Hãng (FBSport),Yonex,Nanoflare 1000Z G1 [FBSport],4.462.000 ₫,4U (83g),Hơi nhẹ đầu,Siêu cứng,FBSport,4462000,83.0,2.5,5.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Nanoflare 800 Pro Chính Hãng (ChiakiVN),Yonex,Nanoflare 800 Pro G1 [ChiakiVN],4.061.000 ₫,4U (83g),Hơi nhẹ đầu,Cứng,ChiakiVN,4061000,83.0,2.5,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Duora Z-Strike Chính Hãng (ShopVNB),Yonex,Duora Z-Strike G1 [ShopVNB],4.038.000 ₫,4U (88g),Nặng đầu,Siêu cứng,ShopVNB,4038000,83.0,4.3,5.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Nanoflare 700 Play Chính Hãng (FBSport),Yonex,Nanoflare 700 Play G1 [FBSport],1.260.000 ₫,4U (83g),Hơi nhẹ đầu,Dẻo,FBSport,1260000,83.0,2.5,2.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Astrox 77 Play Chính Hãng (ChiakiVN),Yonex,Astrox 77 Play G1 [ChiakiVN],1.372.000 ₫,4U (83g),Nặng đầu,Dẻo,ChiakiVN,1372000,83.0,4.3,2.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Axforce 100 Chính Hãng (ShopVNB),Li-Ning,Axforce 100 G1 [ShopVNB],4.161.000 ₫,4U (83g),Siêu nặng đầu,Siêu cứng,ShopVNB,4161000,83.0,4.8,5.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Axforce 90 Max Chính Hãng (FBSport),Li-Ning,Axforce 90 Max G1 [FBSport],4.154.000 ₫,4U (83g),Siêu nặng đầu,Cứng,FBSport,4154000,83.0,4.8,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Halbertec 9000 Chính Hãng (ChiakiVN),Li-Ning,Halbertec 9000 G1 [ChiakiVN],4.203.000 ₫,4U (83g),Cân bằng,Cứng,ChiakiVN,4203000,83.0,3.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Halbertec 8000 Chính Hãng (ShopVNB),Li-Ning,Halbertec 8000 G1 [ShopVNB],3.327.000 ₫,4U (83g),Cân bằng,Cứng,ShopVNB,3327000,83.0,3.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Bladex 900 Moon Chính Hãng (FBSport),Li-Ning,Bladex 900 Moon G1 [FBSport],3.712.000 ₫,4U (83g),,Cứng,FBSport,3712000,83.0,3.0,4.3,Thiếu điểm cân bằng -> Mặc định Cân bằng (3.0)
+Vợt Cầu Lông Li-Ning Tectonic 7 Chính Hãng (ChiakiVN),Li-Ning,Tectonic 7 G1 [ChiakiVN],3.020.000 ₫,4U (84g),Hơi nặng đầu,Trung bình,ChiakiVN,3020000,83.0,3.6,3.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Windstorm 72 Chính Hãng (ShopVNB),Li-Ning,Windstorm 72 G1 [ShopVNB],2.165.000 ₫,4U (72g),Nặng đầu,Dẻo,ShopVNB,2165000,83.0,4.3,2.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Victor Thruster Ryuga II Chính Hãng (FBSport),Victor,Thruster Ryuga II G1 [FBSport],3.486.000 ₫,4U (83g),Siêu nặng đầu,Cứng,FBSport,3486000,83.0,4.8,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Victor AuraSpeed 90K II Chính Hãng (ChiakiVN),Victor,AuraSpeed 90K II G1 [ChiakiVN],3.600.000 ₫,4U (83g),Cân bằng,,ChiakiVN,3600000,83.0,3.0,3.0,Thiếu độ cứng -> Mặc định Trung bình (3.0)
+Vợt Cầu Lông Victor Brave Sword 12 Chính Hãng (ShopVNB),Victor,Brave Sword 12 G1 [ShopVNB],2.886.000 ₫,4U (83g),Cân bằng,Trung bình,ShopVNB,2886000,83.0,3.0,3.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Victor DriveX 9X Chính Hãng (FBSport),Victor,DriveX 9X G1 [FBSport],2.855.000 ₫,4U (83g),Cân bằng,Cứng,FBSport,2855000,83.0,3.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Mizuno JPX Limited Edition Chính Hãng (ChiakiVN),Mizuno,JPX Limited Edition G1 [ChiakiVN],3.881.000 ₫,4U (83g),Nặng đầu,Cứng,ChiakiVN,3881000,83.0,4.3,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Mizuno Fortius 11 Quick Chính Hãng (ShopVNB),Mizuno,Fortius 11 Quick G1 [ShopVNB],4.229.000 ₫,4U (83g),Siêu nặng đầu,Cứng,ShopVNB,4229000,83.0,4.8,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông VNB V200 Xanh Chính Hãng (FBSport),VNB,V200 Xanh G1 [FBSport],515.000 ₫,4U (83g),Nặng đầu,Hơi dẻo,FBSport,515000,83.0,4.3,2.5,Đầy đủ thông số gốc
+Vợt Cầu Lông VNB V88 Cam Chính Hãng (ChiakiVN),VNB,V88 Cam G1 [ChiakiVN],471.000 ₫,4U (83g),Nặng đầu,Hơi dẻo,ChiakiVN,471000,83.0,4.3,2.5,Đầy đủ thông số gốc
+Vợt Cầu Lông VNB TC88B Chính Hãng (ShopVNB),VNB,TC88B G1 [ShopVNB],857.000 ₫,4U (83g),Nặng đầu,Trung bình,ShopVNB,857000,83.0,4.3,3.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Kumpoo Power Control K520 Pro Chính Hãng (FBSport),Kumpoo,Power Control K520 Pro G1 [FBSport],633.000 ₫,4U (82g),Cân bằng,Hơi dẻo,FBSport,633000,83.0,3.0,2.5,Đầy đủ thông số gốc
+Vợt Cầu Lông Apacs Nano Fusion Speed 722 Chính Hãng (ChiakiVN),Apacs,Nano Fusion Speed 722 G1 [ChiakiVN],542.000 ₫,4U (76g),,Dẻo,ChiakiVN,542000,83.0,3.0,2.0,Thiếu điểm cân bằng -> Mặc định Cân bằng (3.0)
+Vợt Cầu Lông Proace Stroke 316 Chính Hãng (ShopVNB),Proace,Stroke 316 G1 [ShopVNB],888.000 ₫,4U (84g),Cân bằng,Trung bình,ShopVNB,888000,83.0,3.0,3.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Astrox 100ZZ Gen 2 (FBSport),Yonex,Astrox 100ZZ G2 [FBSport],4.433.000 ₫,4U (80-84g),Siêu nặng đầu,Siêu cứng,FBSport,4433000,83.0,4.8,5.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Astrox 88D Pro Gen 2 (ChiakiVN),Yonex,Astrox 88D Pro G2 [ChiakiVN],4.168.000 ₫,5U (75-79g),Siêu nặng đầu,Cứng,ChiakiVN,4168000,78.0,4.8,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Astrox 88S Pro Gen 2 (ShopVNB),Yonex,Astrox 88S Pro G2 [ShopVNB],4.249.000 ₫,3U (85-89g),Nặng đầu,Cứng,ShopVNB,4249000,88.0,4.3,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Arcsaber 11 Pro Gen 2 (FBSport),Yonex,Arcsaber 11 Pro G2 [FBSport],4.302.000 ₫,4U (80-84g),Cân bằng,Cứng,FBSport,4302000,83.0,3.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Nanoflare 1000Z Gen 2 (ChiakiVN),Yonex,Nanoflare 1000Z G2 [ChiakiVN],4.324.000 ₫,5U (75-79g),Hơi nhẹ đầu,Siêu cứng,ChiakiVN,4324000,78.0,2.5,5.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Nanoflare 800 Pro Gen 2 (ShopVNB),Yonex,Nanoflare 800 Pro G2 [ShopVNB],4.249.000 ₫,3U (85-89g),Hơi nhẹ đầu,Cứng,ShopVNB,4249000,88.0,2.5,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Duora Z-Strike Gen 2 (FBSport),Yonex,Duora Z-Strike G2 [FBSport],3.726.000 ₫,4U (80-84g),Nặng đầu,,FBSport,3726000,83.0,4.3,3.0,Thiếu độ cứng -> Mặc định Trung bình (3.0)
+Vợt Cầu Lông Yonex Nanoflare 700 Play Gen 2 (ChiakiVN),Yonex,Nanoflare 700 Play G2 [ChiakiVN],1.361.000 ₫,5U (75-79g),Hơi nhẹ đầu,Dẻo,ChiakiVN,1361000,78.0,2.5,2.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Astrox 77 Play Gen 2 (ShopVNB),Yonex,Astrox 77 Play G2 [ShopVNB],1.463.000 ₫,3U (85-89g),Nặng đầu,Dẻo,ShopVNB,1463000,88.0,4.3,2.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Axforce 100 Gen 2 (FBSport),Li-Ning,Axforce 100 G2 [FBSport],4.585.000 ₫,4U (80-84g),Siêu nặng đầu,Siêu cứng,FBSport,4585000,83.0,4.8,5.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Axforce 90 Max Gen 2 (ChiakiVN),Li-Ning,Axforce 90 Max G2 [ChiakiVN],4.601.000 ₫,5U (75-79g),Siêu nặng đầu,Cứng,ChiakiVN,4601000,78.0,4.8,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Halbertec 9000 Gen 2 (ShopVNB),Li-Ning,Halbertec 9000 G2 [ShopVNB],4.251.000 ₫,3U (85-89g),,Cứng,ShopVNB,4251000,88.0,3.0,4.3,Thiếu điểm cân bằng -> Mặc định Cân bằng (3.0)
+Vợt Cầu Lông Li-Ning Halbertec 8000 Gen 2 (FBSport),Li-Ning,Halbertec 8000 G2 [FBSport],3.717.000 ₫,4U (80-84g),Cân bằng,Cứng,FBSport,3717000,83.0,3.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Bladex 900 Moon Gen 2 (ChiakiVN),Li-Ning,Bladex 900 Moon G2 [ChiakiVN],3.616.000 ₫,5U (75-79g),Nhẹ đầu,Cứng,ChiakiVN,3616000,78.0,2.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Tectonic 7 Gen 2 (ShopVNB),Li-Ning,Tectonic 7 G2 [ShopVNB],2.821.000 ₫,3U (85-89g),Hơi nặng đầu,Trung bình,ShopVNB,2821000,88.0,3.6,3.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Windstorm 72 Gen 2 (FBSport),Li-Ning,Windstorm 72 G2 [FBSport],2.077.000 ₫,4U (80-84g),Nặng đầu,Dẻo,FBSport,2077000,83.0,4.3,2.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Victor Thruster Ryuga II Gen 2 (ChiakiVN),Victor,Thruster Ryuga II G2 [ChiakiVN],3.404.000 ₫,5U (75-79g),Siêu nặng đầu,Cứng,ChiakiVN,3404000,78.0,4.8,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Victor AuraSpeed 90K II Gen 2 (ShopVNB),Victor,AuraSpeed 90K II G2 [ShopVNB],3.398.000 ₫,3U (85-89g),Cân bằng,Cứng,ShopVNB,3398000,88.0,3.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Victor Brave Sword 12 Gen 2 (FBSport),Victor,Brave Sword 12 G2 [FBSport],2.574.000 ₫,4U (80-84g),Cân bằng,Trung bình,FBSport,2574000,83.0,3.0,3.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Victor DriveX 9X Gen 2 (ChiakiVN),Victor,DriveX 9X G2 [ChiakiVN],2.989.000 ₫,5U (75-79g),Cân bằng,Cứng,ChiakiVN,2989000,78.0,3.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Mizuno JPX Limited Edition Gen 2 (ShopVNB),Mizuno,JPX Limited Edition G2 [ShopVNB],3.780.000 ₫,3U (85-89g),Nặng đầu,Cứng,ShopVNB,3780000,88.0,4.3,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Mizuno Fortius 11 Quick Gen 2 (FBSport),Mizuno,Fortius 11 Quick G2 [FBSport],4.011.000 ₫,4U (80-84g),Siêu nặng đầu,Cứng,FBSport,4011000,83.0,4.8,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông VNB V200 Xanh Gen 2 (ChiakiVN),VNB,V200 Xanh G2 [ChiakiVN],518.000 ₫,5U (75-79g),Nặng đầu,Hơi dẻo,ChiakiVN,518000,78.0,4.3,2.5,Đầy đủ thông số gốc
+Vợt Cầu Lông VNB V88 Cam Gen 2 (ShopVNB),VNB,V88 Cam G2 [ShopVNB],475.000 ₫,3U (85-89g),Nặng đầu,,ShopVNB,475000,88.0,4.3,3.0,Thiếu độ cứng -> Mặc định Trung bình (3.0)
+Vợt Cầu Lông VNB TC88B Gen 2 (FBSport),VNB,TC88B G2 [FBSport],769.000 ₫,4U (80-84g),,Trung bình,FBSport,769000,83.0,3.0,3.0,Thiếu điểm cân bằng -> Mặc định Cân bằng (3.0)
+Vợt Cầu Lông Kumpoo Power Control K520 Pro Gen 2 (ChiakiVN),Kumpoo,Power Control K520 Pro G2 [ChiakiVN],695.000 ₫,5U (75-79g),Cân bằng,Hơi dẻo,ChiakiVN,695000,78.0,3.0,2.5,Đầy đủ thông số gốc
+Vợt Cầu Lông Apacs Nano Fusion Speed 722 Gen 2 (ShopVNB),Apacs,Nano Fusion Speed 722 G2 [ShopVNB],593.000 ₫,3U (85-89g),Cân bằng,Dẻo,ShopVNB,593000,88.0,3.0,2.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Proace Stroke 316 Gen 2 (FBSport),Proace,Stroke 316 G2 [FBSport],966.000 ₫,4U (80-84g),Cân bằng,Trung bình,FBSport,966000,83.0,3.0,3.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Astrox 100ZZ Gen 3 (ChiakiVN),Yonex,Astrox 100ZZ G3 [ChiakiVN],3.979.000 ₫,5U (75-79g),Siêu nặng đầu,Siêu cứng,ChiakiVN,3979000,78.0,4.8,5.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Astrox 88D Pro Gen 3 (ShopVNB),Yonex,Astrox 88D Pro G3 [ShopVNB],4.250.000 ₫,3U (85-89g),Siêu nặng đầu,Cứng,ShopVNB,4250000,88.0,4.8,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Astrox 88S Pro Gen 3 (FBSport),Yonex,Astrox 88S Pro G3 [FBSport],3.831.000 ₫,4U (80-84g),Nặng đầu,Cứng,FBSport,3831000,83.0,4.3,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Arcsaber 11 Pro Gen 3 (ChiakiVN),Yonex,Arcsaber 11 Pro G3 [ChiakiVN],4.069.000 ₫,5U (75-79g),Cân bằng,Cứng,ChiakiVN,4069000,78.0,3.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Nanoflare 1000Z Gen 3 (ShopVNB),Yonex,Nanoflare 1000Z G3 [ShopVNB],4.636.000 ₫,3U (85-89g),Hơi nhẹ đầu,Siêu cứng,ShopVNB,4636000,88.0,2.5,5.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Nanoflare 800 Pro Gen 3 (FBSport),Yonex,Nanoflare 800 Pro G3 [FBSport],4.038.000 ₫,4U (80-84g),Hơi nhẹ đầu,Cứng,FBSport,4038000,83.0,2.5,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Duora Z-Strike Gen 3 (ChiakiVN),Yonex,Duora Z-Strike G3 [ChiakiVN],3.834.000 ₫,5U (75-79g),Nặng đầu,Siêu cứng,ChiakiVN,3834000,78.0,4.3,5.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Nanoflare 700 Play Gen 3 (ShopVNB),Yonex,Nanoflare 700 Play G3 [ShopVNB],1.389.000 ₫,3U (85-89g),Hơi nhẹ đầu,Dẻo,ShopVNB,1389000,88.0,2.5,2.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Astrox 77 Play Gen 3 (FBSport),Yonex,Astrox 77 Play G3 [FBSport],1.466.000 ₫,4U (80-84g),Nặng đầu,Dẻo,FBSport,1466000,83.0,4.3,2.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Axforce 100 Gen 3 (ChiakiVN),Li-Ning,Axforce 100 G3 [ChiakiVN],4.698.000 ₫,5U (75-79g),,Siêu cứng,ChiakiVN,4698000,78.0,3.0,5.0,Thiếu điểm cân bằng -> Mặc định Cân bằng (3.0)
+Vợt Cầu Lông Li-Ning Axforce 90 Max Gen 3 (ShopVNB),Li-Ning,Axforce 90 Max G3 [ShopVNB],4.161.000 ₫,3U (85-89g),Siêu nặng đầu,Cứng,ShopVNB,4161000,88.0,4.8,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Halbertec 9000 Gen 3 (FBSport),Li-Ning,Halbertec 9000 G3 [FBSport],3.885.000 ₫,4U (80-84g),Cân bằng,Cứng,FBSport,3885000,83.0,3.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Halbertec 8000 Gen 3 (ChiakiVN),Li-Ning,Halbertec 8000 G3 [ChiakiVN],3.493.000 ₫,5U (75-79g),Cân bằng,,ChiakiVN,3493000,78.0,3.0,3.0,Thiếu độ cứng -> Mặc định Trung bình (3.0)
+Vợt Cầu Lông Li-Ning Bladex 900 Moon Gen 3 (ShopVNB),Li-Ning,Bladex 900 Moon G3 [ShopVNB],3.755.000 ₫,3U (85-89g),Nhẹ đầu,Cứng,ShopVNB,3755000,88.0,2.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Tectonic 7 Gen 3 (FBSport),Li-Ning,Tectonic 7 G3 [FBSport],2.813.000 ₫,4U (80-84g),Hơi nặng đầu,Trung bình,FBSport,2813000,83.0,3.6,3.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Windstorm 72 Gen 3 (ChiakiVN),Li-Ning,Windstorm 72 G3 [ChiakiVN],2.302.000 ₫,5U (75-79g),Nặng đầu,Dẻo,ChiakiVN,2302000,78.0,4.3,2.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Victor Thruster Ryuga II Gen 3 (ShopVNB),Victor,Thruster Ryuga II G3 [ShopVNB],3.869.000 ₫,3U (85-89g),Siêu nặng đầu,Cứng,ShopVNB,3869000,88.0,4.8,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Victor AuraSpeed 90K II Gen 3 (FBSport),Victor,AuraSpeed 90K II G3 [FBSport],3.444.000 ₫,4U (80-84g),Cân bằng,Cứng,FBSport,3444000,83.0,3.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Victor Brave Sword 12 Gen 3 (ChiakiVN),Victor,Brave Sword 12 G3 [ChiakiVN],2.818.000 ₫,5U (75-79g),Cân bằng,Trung bình,ChiakiVN,2818000,78.0,3.0,3.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Victor DriveX 9X Gen 3 (ShopVNB),Victor,DriveX 9X G3 [ShopVNB],3.048.000 ₫,3U (85-89g),Cân bằng,Cứng,ShopVNB,3048000,88.0,3.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Mizuno JPX Limited Edition Gen 3 (FBSport),Mizuno,JPX Limited Edition G3 [FBSport],3.945.000 ₫,4U (80-84g),Nặng đầu,Cứng,FBSport,3945000,83.0,4.3,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Mizuno Fortius 11 Quick Gen 3 (ChiakiVN),Mizuno,Fortius 11 Quick G3 [ChiakiVN],4.073.000 ₫,5U (75-79g),Siêu nặng đầu,Cứng,ChiakiVN,4073000,78.0,4.8,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông VNB V200 Xanh Gen 3 (ShopVNB),VNB,V200 Xanh G3 [ShopVNB],509.000 ₫,3U (85-89g),,Hơi dẻo,ShopVNB,509000,88.0,3.0,2.5,Thiếu điểm cân bằng -> Mặc định Cân bằng (3.0)
+Vợt Cầu Lông VNB V88 Cam Gen 3 (FBSport),VNB,V88 Cam G3 [FBSport],478.000 ₫,4U (80-84g),Nặng đầu,Hơi dẻo,FBSport,478000,83.0,4.3,2.5,Đầy đủ thông số gốc
+Vợt Cầu Lông VNB TC88B Gen 3 (ChiakiVN),VNB,TC88B G3 [ChiakiVN],806.000 ₫,5U (75-79g),Nặng đầu,Trung bình,ChiakiVN,806000,78.0,4.3,3.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Kumpoo Power Control K520 Pro Gen 3 (ShopVNB),Kumpoo,Power Control K520 Pro G3 [ShopVNB],625.000 ₫,3U (85-89g),Cân bằng,Hơi dẻo,ShopVNB,625000,88.0,3.0,2.5,Đầy đủ thông số gốc
+Vợt Cầu Lông Apacs Nano Fusion Speed 722 Gen 3 (FBSport),Apacs,Nano Fusion Speed 722 G3 [FBSport],587.000 ₫,4U (80-84g),Cân bằng,Dẻo,FBSport,587000,83.0,3.0,2.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Proace Stroke 316 Gen 3 (ChiakiVN),Proace,Stroke 316 G3 [ChiakiVN],1.010.000 ₫,5U (75-79g),Cân bằng,Trung bình,ChiakiVN,1010000,78.0,3.0,3.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Astrox 100ZZ Gen 4 (ShopVNB),Yonex,Astrox 100ZZ G4 [ShopVNB],4.132.000 ₫,3U (85-89g),Siêu nặng đầu,Siêu cứng,ShopVNB,4132000,88.0,4.8,5.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Astrox 88D Pro Gen 4 (FBSport),Yonex,Astrox 88D Pro G4 [FBSport],3.915.000 ₫,4U (80-84g),Siêu nặng đầu,,FBSport,3915000,83.0,4.8,3.0,Thiếu độ cứng -> Mặc định Trung bình (3.0)
+Vợt Cầu Lông Yonex Astrox 88S Pro Gen 4 (ChiakiVN),Yonex,Astrox 88S Pro G4 [ChiakiVN],4.372.000 ₫,5U (75-79g),Nặng đầu,Cứng,ChiakiVN,4372000,78.0,4.3,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Arcsaber 11 Pro Gen 4 (ShopVNB),Yonex,Arcsaber 11 Pro G4 [ShopVNB],4.156.000 ₫,3U (85-89g),Cân bằng,Cứng,ShopVNB,4156000,88.0,3.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Nanoflare 1000Z Gen 4 (FBSport),Yonex,Nanoflare 1000Z G4 [FBSport],4.018.000 ₫,4U (80-84g),Hơi nhẹ đầu,Siêu cứng,FBSport,4018000,83.0,2.5,5.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Nanoflare 800 Pro Gen 4 (ChiakiVN),Yonex,Nanoflare 800 Pro G4 [ChiakiVN],3.663.000 ₫,5U (75-79g),Hơi nhẹ đầu,Cứng,ChiakiVN,3663000,78.0,2.5,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Duora Z-Strike Gen 4 (ShopVNB),Yonex,Duora Z-Strike G4 [ShopVNB],3.562.000 ₫,3U (85-89g),Nặng đầu,Siêu cứng,ShopVNB,3562000,88.0,4.3,5.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Nanoflare 700 Play Gen 4 (FBSport),Yonex,Nanoflare 700 Play G4 [FBSport],1.377.000 ₫,4U (80-84g),,Dẻo,FBSport,1377000,83.0,3.0,2.0,Thiếu điểm cân bằng -> Mặc định Cân bằng (3.0)
+Vợt Cầu Lông Yonex Astrox 77 Play Gen 4 (ChiakiVN),Yonex,Astrox 77 Play G4 [ChiakiVN],1.454.000 ₫,5U (75-79g),Nặng đầu,Dẻo,ChiakiVN,1454000,78.0,4.3,2.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Axforce 100 Gen 4 (ShopVNB),Li-Ning,Axforce 100 G4 [ShopVNB],4.443.000 ₫,3U (85-89g),Siêu nặng đầu,Siêu cứng,ShopVNB,4443000,88.0,4.8,5.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Axforce 90 Max Gen 4 (FBSport),Li-Ning,Axforce 90 Max G4 [FBSport],4.046.000 ₫,4U (80-84g),Siêu nặng đầu,Cứng,FBSport,4046000,83.0,4.8,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Halbertec 9000 Gen 4 (ChiakiVN),Li-Ning,Halbertec 9000 G4 [ChiakiVN],4.120.000 ₫,5U (75-79g),Cân bằng,Cứng,ChiakiVN,4120000,78.0,3.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Halbertec 8000 Gen 4 (ShopVNB),Li-Ning,Halbertec 8000 G4 [ShopVNB],3.885.000 ₫,3U (85-89g),Cân bằng,Cứng,ShopVNB,3885000,88.0,3.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Bladex 900 Moon Gen 4 (FBSport),Li-Ning,Bladex 900 Moon G4 [FBSport],3.918.000 ₫,4U (80-84g),Nhẹ đầu,Cứng,FBSport,3918000,83.0,2.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Tectonic 7 Gen 4 (ChiakiVN),Li-Ning,Tectonic 7 G4 [ChiakiVN],3.172.000 ₫,5U (75-79g),Hơi nặng đầu,Trung bình,ChiakiVN,3172000,78.0,3.6,3.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Windstorm 72 Gen 4 (ShopVNB),Li-Ning,Windstorm 72 G4 [ShopVNB],2.274.000 ₫,3U (85-89g),Nặng đầu,Dẻo,ShopVNB,2274000,88.0,4.3,2.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Victor Thruster Ryuga II Gen 4 (FBSport),Victor,Thruster Ryuga II G4 [FBSport],3.364.000 ₫,4U (80-84g),Siêu nặng đầu,Cứng,FBSport,3364000,83.0,4.8,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Victor AuraSpeed 90K II Gen 4 (ChiakiVN),Victor,AuraSpeed 90K II G4 [ChiakiVN],3.675.000 ₫,5U (75-79g),Cân bằng,Cứng,ChiakiVN,3675000,78.0,3.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Victor Brave Sword 12 Gen 4 (ShopVNB),Victor,Brave Sword 12 G4 [ShopVNB],2.829.000 ₫,3U (85-89g),Cân bằng,,ShopVNB,2829000,88.0,3.0,3.0,Thiếu độ cứng -> Mặc định Trung bình (3.0)
+Vợt Cầu Lông Victor DriveX 9X Gen 4 (FBSport),Victor,DriveX 9X G4 [FBSport],3.118.000 ₫,4U (80-84g),Cân bằng,Cứng,FBSport,3118000,83.0,3.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Mizuno JPX Limited Edition Gen 4 (ChiakiVN),Mizuno,JPX Limited Edition G4 [ChiakiVN],3.561.000 ₫,5U (75-79g),,Cứng,ChiakiVN,3561000,78.0,3.0,4.3,Thiếu điểm cân bằng -> Mặc định Cân bằng (3.0)
+Vợt Cầu Lông Mizuno Fortius 11 Quick Gen 4 (ShopVNB),Mizuno,Fortius 11 Quick G4 [ShopVNB],4.192.000 ₫,3U (85-89g),Siêu nặng đầu,Cứng,ShopVNB,4192000,88.0,4.8,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông VNB V200 Xanh Gen 4 (FBSport),VNB,V200 Xanh G4 [FBSport],496.000 ₫,4U (80-84g),Nặng đầu,Hơi dẻo,FBSport,496000,83.0,4.3,2.5,Đầy đủ thông số gốc
+Vợt Cầu Lông VNB V88 Cam Gen 4 (ChiakiVN),VNB,V88 Cam G4 [ChiakiVN],493.000 ₫,5U (75-79g),Nặng đầu,Hơi dẻo,ChiakiVN,493000,78.0,4.3,2.5,Đầy đủ thông số gốc
+Vợt Cầu Lông VNB TC88B Gen 4 (ShopVNB),VNB,TC88B G4 [ShopVNB],793.000 ₫,3U (85-89g),Nặng đầu,Trung bình,ShopVNB,793000,88.0,4.3,3.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Kumpoo Power Control K520 Pro Gen 4 (FBSport),Kumpoo,Power Control K520 Pro G4 [FBSport],697.000 ₫,4U (80-84g),Cân bằng,Hơi dẻo,FBSport,697000,83.0,3.0,2.5,Đầy đủ thông số gốc
+Vợt Cầu Lông Apacs Nano Fusion Speed 722 Gen 4 (ChiakiVN),Apacs,Nano Fusion Speed 722 G4 [ChiakiVN],614.000 ₫,5U (75-79g),Cân bằng,Dẻo,ChiakiVN,614000,78.0,3.0,2.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Proace Stroke 316 Gen 4 (ShopVNB),Proace,Stroke 316 G4 [ShopVNB],914.000 ₫,3U (85-89g),Cân bằng,Trung bình,ShopVNB,914000,88.0,3.0,3.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Astrox 100ZZ Gen 5 (FBSport),Yonex,Astrox 100ZZ G5 [FBSport],4.200.000 ₫,4U (80-84g),Siêu nặng đầu,Siêu cứng,FBSport,4200000,83.0,4.8,5.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Astrox 88D Pro Gen 5 (ChiakiVN),Yonex,Astrox 88D Pro G5 [ChiakiVN],3.889.000 ₫,5U (75-79g),Siêu nặng đầu,Cứng,ChiakiVN,3889000,78.0,4.8,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Astrox 88S Pro Gen 5 (ShopVNB),Yonex,Astrox 88S Pro G5 [ShopVNB],4.317.000 ₫,3U (85-89g),Nặng đầu,Cứng,ShopVNB,4317000,88.0,4.3,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Arcsaber 11 Pro Gen 5 (FBSport),Yonex,Arcsaber 11 Pro G5 [FBSport],4.396.000 ₫,4U (80-84g),Cân bằng,Cứng,FBSport,4396000,83.0,3.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Nanoflare 1000Z Gen 5 (ChiakiVN),Yonex,Nanoflare 1000Z G5 [ChiakiVN],4.161.000 ₫,5U (75-79g),Hơi nhẹ đầu,Siêu cứng,ChiakiVN,4161000,78.0,2.5,5.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Nanoflare 800 Pro Gen 5 (ShopVNB),Yonex,Nanoflare 800 Pro G5 [ShopVNB],4.037.000 ₫,3U (85-89g),,Cứng,ShopVNB,4037000,88.0,3.0,4.3,Thiếu điểm cân bằng -> Mặc định Cân bằng (3.0)
+Vợt Cầu Lông Yonex Duora Z-Strike Gen 5 (FBSport),Yonex,Duora Z-Strike G5 [FBSport],3.866.000 ₫,4U (80-84g),Nặng đầu,Siêu cứng,FBSport,3866000,83.0,4.3,5.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Nanoflare 700 Play Gen 5 (ChiakiVN),Yonex,Nanoflare 700 Play G5 [ChiakiVN],1.275.000 ₫,5U (75-79g),Hơi nhẹ đầu,,ChiakiVN,1275000,78.0,2.5,3.0,Thiếu độ cứng -> Mặc định Trung bình (3.0)
+Vợt Cầu Lông Yonex Astrox 77 Play Gen 5 (ShopVNB),Yonex,Astrox 77 Play G5 [ShopVNB],1.448.000 ₫,3U (85-89g),Nặng đầu,Dẻo,ShopVNB,1448000,88.0,4.3,2.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Axforce 100 Gen 5 (FBSport),Li-Ning,Axforce 100 G5 [FBSport],4.528.000 ₫,4U (80-84g),Siêu nặng đầu,Siêu cứng,FBSport,4528000,83.0,4.8,5.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Axforce 90 Max Gen 5 (ChiakiVN),Li-Ning,Axforce 90 Max G5 [ChiakiVN],4.543.000 ₫,5U (75-79g),Siêu nặng đầu,Cứng,ChiakiVN,4543000,78.0,4.8,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Halbertec 9000 Gen 5 (ShopVNB),Li-Ning,Halbertec 9000 G5 [ShopVNB],4.220.000 ₫,3U (85-89g),Cân bằng,Cứng,ShopVNB,4220000,88.0,3.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Halbertec 8000 Gen 5 (FBSport),Li-Ning,Halbertec 8000 G5 [FBSport],3.312.000 ₫,4U (80-84g),Cân bằng,Cứng,FBSport,3312000,83.0,3.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Bladex 900 Moon Gen 5 (ChiakiVN),Li-Ning,Bladex 900 Moon G5 [ChiakiVN],3.790.000 ₫,5U (75-79g),Nhẹ đầu,Cứng,ChiakiVN,3790000,78.0,2.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Tectonic 7 Gen 5 (ShopVNB),Li-Ning,Tectonic 7 G5 [ShopVNB],2.723.000 ₫,3U (85-89g),Hơi nặng đầu,Trung bình,ShopVNB,2723000,88.0,3.6,3.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Windstorm 72 Gen 5 (FBSport),Li-Ning,Windstorm 72 G5 [FBSport],2.297.000 ₫,4U (80-84g),Nặng đầu,Dẻo,FBSport,2297000,83.0,4.3,2.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Victor Thruster Ryuga II Gen 5 (ChiakiVN),Victor,Thruster Ryuga II G5 [ChiakiVN],3.871.000 ₫,5U (75-79g),Siêu nặng đầu,Cứng,ChiakiVN,3871000,78.0,4.8,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Victor AuraSpeed 90K II Gen 5 (ShopVNB),Victor,AuraSpeed 90K II G5 [ShopVNB],3.738.000 ₫,3U (85-89g),Cân bằng,Cứng,ShopVNB,3738000,88.0,3.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Victor Brave Sword 12 Gen 5 (FBSport),Victor,Brave Sword 12 G5 [FBSport],2.665.000 ₫,4U (80-84g),,Trung bình,FBSport,2665000,83.0,3.0,3.0,Thiếu điểm cân bằng -> Mặc định Cân bằng (3.0)
+Vợt Cầu Lông Victor DriveX 9X Gen 5 (ChiakiVN),Victor,DriveX 9X G5 [ChiakiVN],2.880.000 ₫,5U (75-79g),Cân bằng,Cứng,ChiakiVN,2880000,78.0,3.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Mizuno JPX Limited Edition Gen 5 (ShopVNB),Mizuno,JPX Limited Edition G5 [ShopVNB],3.923.000 ₫,3U (85-89g),Nặng đầu,Cứng,ShopVNB,3923000,88.0,4.3,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Mizuno Fortius 11 Quick Gen 5 (FBSport),Mizuno,Fortius 11 Quick G5 [FBSport],4.393.000 ₫,4U (80-84g),Siêu nặng đầu,Cứng,FBSport,4393000,83.0,4.8,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông VNB V200 Xanh Gen 5 (ChiakiVN),VNB,V200 Xanh G5 [ChiakiVN],493.000 ₫,5U (75-79g),Nặng đầu,Hơi dẻo,ChiakiVN,493000,78.0,4.3,2.5,Đầy đủ thông số gốc
+Vợt Cầu Lông VNB V88 Cam Gen 5 (ShopVNB),VNB,V88 Cam G5 [ShopVNB],497.000 ₫,3U (85-89g),Nặng đầu,Hơi dẻo,ShopVNB,497000,88.0,4.3,2.5,Đầy đủ thông số gốc
+Vợt Cầu Lông VNB TC88B Gen 5 (FBSport),VNB,TC88B G5 [FBSport],743.000 ₫,4U (80-84g),Nặng đầu,,FBSport,743000,83.0,4.3,3.0,Thiếu độ cứng -> Mặc định Trung bình (3.0)
+Vợt Cầu Lông Kumpoo Power Control K520 Pro Gen 5 (ChiakiVN),Kumpoo,Power Control K520 Pro G5 [ChiakiVN],677.000 ₫,5U (75-79g),Cân bằng,Hơi dẻo,ChiakiVN,677000,78.0,3.0,2.5,Đầy đủ thông số gốc
+Vợt Cầu Lông Apacs Nano Fusion Speed 722 Gen 5 (ShopVNB),Apacs,Nano Fusion Speed 722 G5 [ShopVNB],604.000 ₫,3U (85-89g),Cân bằng,Dẻo,ShopVNB,604000,88.0,3.0,2.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Proace Stroke 316 Gen 5 (FBSport),Proace,Stroke 316 G5 [FBSport],893.000 ₫,4U (80-84g),Cân bằng,Trung bình,FBSport,893000,83.0,3.0,3.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Astrox 100ZZ Gen 6 (ChiakiVN),Yonex,Astrox 100ZZ G6 [ChiakiVN],4.183.000 ₫,5U (75-79g),Siêu nặng đầu,Siêu cứng,ChiakiVN,4183000,78.0,4.8,5.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Astrox 88D Pro Gen 6 (ShopVNB),Yonex,Astrox 88D Pro G6 [ShopVNB],4.132.000 ₫,3U (85-89g),Siêu nặng đầu,Cứng,ShopVNB,4132000,88.0,4.8,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Astrox 88S Pro Gen 6 (FBSport),Yonex,Astrox 88S Pro G6 [FBSport],3.897.000 ₫,4U (80-84g),Nặng đầu,Cứng,FBSport,3897000,83.0,4.3,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Arcsaber 11 Pro Gen 6 (ChiakiVN),Yonex,Arcsaber 11 Pro G6 [ChiakiVN],4.397.000 ₫,5U (75-79g),,Cứng,ChiakiVN,4397000,78.0,3.0,4.3,Thiếu điểm cân bằng -> Mặc định Cân bằng (3.0)
+Vợt Cầu Lông Yonex Nanoflare 1000Z Gen 6 (ShopVNB),Yonex,Nanoflare 1000Z G6 [ShopVNB],4.247.000 ₫,3U (85-89g),Hơi nhẹ đầu,Siêu cứng,ShopVNB,4247000,88.0,2.5,5.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Nanoflare 800 Pro Gen 6 (FBSport),Yonex,Nanoflare 800 Pro G6 [FBSport],3.767.000 ₫,4U (80-84g),Hơi nhẹ đầu,Cứng,FBSport,3767000,83.0,2.5,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Duora Z-Strike Gen 6 (ChiakiVN),Yonex,Duora Z-Strike G6 [ChiakiVN],3.823.000 ₫,5U (75-79g),Nặng đầu,Siêu cứng,ChiakiVN,3823000,78.0,4.3,5.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Nanoflare 700 Play Gen 6 (ShopVNB),Yonex,Nanoflare 700 Play G6 [ShopVNB],1.399.000 ₫,3U (85-89g),Hơi nhẹ đầu,Dẻo,ShopVNB,1399000,88.0,2.5,2.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Astrox 77 Play Gen 6 (FBSport),Yonex,Astrox 77 Play G6 [FBSport],1.323.000 ₫,4U (80-84g),Nặng đầu,Dẻo,FBSport,1323000,83.0,4.3,2.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Axforce 100 Gen 6 (ChiakiVN),Li-Ning,Axforce 100 G6 [ChiakiVN],4.364.000 ₫,5U (75-79g),Siêu nặng đầu,Siêu cứng,ChiakiVN,4364000,78.0,4.8,5.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Axforce 90 Max Gen 6 (ShopVNB),Li-Ning,Axforce 90 Max G6 [ShopVNB],4.694.000 ₫,3U (85-89g),Siêu nặng đầu,Cứng,ShopVNB,4694000,88.0,4.8,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Halbertec 9000 Gen 6 (FBSport),Li-Ning,Halbertec 9000 G6 [FBSport],4.300.000 ₫,4U (80-84g),Cân bằng,Cứng,FBSport,4300000,83.0,3.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Halbertec 8000 Gen 6 (ChiakiVN),Li-Ning,Halbertec 8000 G6 [ChiakiVN],3.564.000 ₫,5U (75-79g),Cân bằng,Cứng,ChiakiVN,3564000,78.0,3.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Bladex 900 Moon Gen 6 (ShopVNB),Li-Ning,Bladex 900 Moon G6 [ShopVNB],3.910.000 ₫,3U (85-89g),Nhẹ đầu,,ShopVNB,3910000,88.0,2.0,3.0,Thiếu độ cứng -> Mặc định Trung bình (3.0)
+Vợt Cầu Lông Li-Ning Tectonic 7 Gen 6 (FBSport),Li-Ning,Tectonic 7 G6 [FBSport],2.771.000 ₫,4U (80-84g),Hơi nặng đầu,Trung bình,FBSport,2771000,83.0,3.6,3.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Windstorm 72 Gen 6 (ChiakiVN),Li-Ning,Windstorm 72 G6 [ChiakiVN],2.055.000 ₫,5U (75-79g),Nặng đầu,Dẻo,ChiakiVN,2055000,78.0,4.3,2.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Victor Thruster Ryuga II Gen 6 (ShopVNB),Victor,Thruster Ryuga II G6 [ShopVNB],3.555.000 ₫,3U (85-89g),,Cứng,ShopVNB,3555000,88.0,3.0,4.3,Thiếu điểm cân bằng -> Mặc định Cân bằng (3.0)
+Vợt Cầu Lông Victor AuraSpeed 90K II Gen 6 (FBSport),Victor,AuraSpeed 90K II G6 [FBSport],3.600.000 ₫,4U (80-84g),Cân bằng,Cứng,FBSport,3600000,83.0,3.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Victor Brave Sword 12 Gen 6 (ChiakiVN),Victor,Brave Sword 12 G6 [ChiakiVN],2.631.000 ₫,5U (75-79g),Cân bằng,Trung bình,ChiakiVN,2631000,78.0,3.0,3.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Victor DriveX 9X Gen 6 (ShopVNB),Victor,DriveX 9X G6 [ShopVNB],2.961.000 ₫,3U (85-89g),Cân bằng,Cứng,ShopVNB,2961000,88.0,3.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Mizuno JPX Limited Edition Gen 6 (FBSport),Mizuno,JPX Limited Edition G6 [FBSport],3.446.000 ₫,4U (80-84g),Nặng đầu,Cứng,FBSport,3446000,83.0,4.3,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Mizuno Fortius 11 Quick Gen 6 (ChiakiVN),Mizuno,Fortius 11 Quick G6 [ChiakiVN],4.186.000 ₫,5U (75-79g),Siêu nặng đầu,Cứng,ChiakiVN,4186000,78.0,4.8,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông VNB V200 Xanh Gen 6 (ShopVNB),VNB,V200 Xanh G6 [ShopVNB],506.000 ₫,3U (85-89g),Nặng đầu,Hơi dẻo,ShopVNB,506000,88.0,4.3,2.5,Đầy đủ thông số gốc
+Vợt Cầu Lông VNB V88 Cam Gen 6 (FBSport),VNB,V88 Cam G6 [FBSport],531.000 ₫,4U (80-84g),Nặng đầu,Hơi dẻo,FBSport,531000,83.0,4.3,2.5,Đầy đủ thông số gốc
+Vợt Cầu Lông VNB TC88B Gen 6 (ChiakiVN),VNB,TC88B G6 [ChiakiVN],844.000 ₫,5U (75-79g),Nặng đầu,Trung bình,ChiakiVN,844000,78.0,4.3,3.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Kumpoo Power Control K520 Pro Gen 6 (ShopVNB),Kumpoo,Power Control K520 Pro G6 [ShopVNB],605.000 ₫,3U (85-89g),Cân bằng,Hơi dẻo,ShopVNB,605000,88.0,3.0,2.5,Đầy đủ thông số gốc
+Vợt Cầu Lông Apacs Nano Fusion Speed 722 Gen 6 (FBSport),Apacs,Nano Fusion Speed 722 G6 [FBSport],555.000 ₫,4U (80-84g),Cân bằng,Dẻo,FBSport,555000,83.0,3.0,2.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Proace Stroke 316 Gen 6 (ChiakiVN),Proace,Stroke 316 G6 [ChiakiVN],975.000 ₫,5U (75-79g),Cân bằng,Trung bình,ChiakiVN,975000,78.0,3.0,3.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Astrox 100ZZ Gen 7 (ShopVNB),Yonex,Astrox 100ZZ G7 [ShopVNB],4.007.000 ₫,3U (85-89g),Siêu nặng đầu,Siêu cứng,ShopVNB,4007000,88.0,4.8,5.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Astrox 88D Pro Gen 7 (FBSport),Yonex,Astrox 88D Pro G7 [FBSport],3.858.000 ₫,4U (80-84g),,Cứng,FBSport,3858000,83.0,3.0,4.3,Thiếu điểm cân bằng -> Mặc định Cân bằng (3.0)
+Vợt Cầu Lông Yonex Astrox 88S Pro Gen 7 (ChiakiVN),Yonex,Astrox 88S Pro G7 [ChiakiVN],4.332.000 ₫,5U (75-79g),Nặng đầu,,ChiakiVN,4332000,78.0,4.3,3.0,Thiếu độ cứng -> Mặc định Trung bình (3.0)
+Vợt Cầu Lông Yonex Arcsaber 11 Pro Gen 7 (ShopVNB),Yonex,Arcsaber 11 Pro G7 [ShopVNB],4.197.000 ₫,3U (85-89g),Cân bằng,Cứng,ShopVNB,4197000,88.0,3.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Nanoflare 1000Z Gen 7 (FBSport),Yonex,Nanoflare 1000Z G7 [FBSport],4.281.000 ₫,4U (80-84g),Hơi nhẹ đầu,Siêu cứng,FBSport,4281000,83.0,2.5,5.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Nanoflare 800 Pro Gen 7 (ChiakiVN),Yonex,Nanoflare 800 Pro G7 [ChiakiVN],4.129.000 ₫,5U (75-79g),Hơi nhẹ đầu,Cứng,ChiakiVN,4129000,78.0,2.5,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Duora Z-Strike Gen 7 (ShopVNB),Yonex,Duora Z-Strike G7 [ShopVNB],3.986.000 ₫,3U (85-89g),Nặng đầu,Siêu cứng,ShopVNB,3986000,88.0,4.3,5.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Nanoflare 700 Play Gen 7 (FBSport),Yonex,Nanoflare 700 Play G7 [FBSport],1.283.000 ₫,4U (80-84g),Hơi nhẹ đầu,Dẻo,FBSport,1283000,83.0,2.5,2.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Astrox 77 Play Gen 7 (ChiakiVN),Yonex,Astrox 77 Play G7 [ChiakiVN],1.300.000 ₫,5U (75-79g),Nặng đầu,Dẻo,ChiakiVN,1300000,78.0,4.3,2.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Axforce 100 Gen 7 (ShopVNB),Li-Ning,Axforce 100 G7 [ShopVNB],4.450.000 ₫,3U (85-89g),Siêu nặng đầu,Siêu cứng,ShopVNB,4450000,88.0,4.8,5.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Axforce 90 Max Gen 7 (FBSport),Li-Ning,Axforce 90 Max G7 [FBSport],4.296.000 ₫,4U (80-84g),Siêu nặng đầu,Cứng,FBSport,4296000,83.0,4.8,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Halbertec 9000 Gen 7 (ChiakiVN),Li-Ning,Halbertec 9000 G7 [ChiakiVN],4.177.000 ₫,5U (75-79g),Cân bằng,Cứng,ChiakiVN,4177000,78.0,3.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Halbertec 8000 Gen 7 (ShopVNB),Li-Ning,Halbertec 8000 G7 [ShopVNB],3.731.000 ₫,3U (85-89g),Cân bằng,Cứng,ShopVNB,3731000,88.0,3.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Bladex 900 Moon Gen 7 (FBSport),Li-Ning,Bladex 900 Moon G7 [FBSport],4.008.000 ₫,4U (80-84g),Nhẹ đầu,Cứng,FBSport,4008000,83.0,2.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Tectonic 7 Gen 7 (ChiakiVN),Li-Ning,Tectonic 7 G7 [ChiakiVN],3.178.000 ₫,5U (75-79g),,Trung bình,ChiakiVN,3178000,78.0,3.0,3.0,Thiếu điểm cân bằng -> Mặc định Cân bằng (3.0)
+Vợt Cầu Lông Li-Ning Windstorm 72 Gen 7 (ShopVNB),Li-Ning,Windstorm 72 G7 [ShopVNB],2.011.000 ₫,3U (85-89g),Nặng đầu,Dẻo,ShopVNB,2011000,88.0,4.3,2.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Victor Thruster Ryuga II Gen 7 (FBSport),Victor,Thruster Ryuga II G7 [FBSport],3.593.000 ₫,4U (80-84g),Siêu nặng đầu,Cứng,FBSport,3593000,83.0,4.8,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Victor AuraSpeed 90K II Gen 7 (ChiakiVN),Victor,AuraSpeed 90K II G7 [ChiakiVN],3.458.000 ₫,5U (75-79g),Cân bằng,Cứng,ChiakiVN,3458000,78.0,3.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Victor Brave Sword 12 Gen 7 (ShopVNB),Victor,Brave Sword 12 G7 [ShopVNB],2.909.000 ₫,3U (85-89g),Cân bằng,Trung bình,ShopVNB,2909000,88.0,3.0,3.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Victor DriveX 9X Gen 7 (FBSport),Victor,DriveX 9X G7 [FBSport],2.975.000 ₫,4U (80-84g),Cân bằng,,FBSport,2975000,83.0,3.0,3.0,Thiếu độ cứng -> Mặc định Trung bình (3.0)
+Vợt Cầu Lông Mizuno JPX Limited Edition Gen 7 (ChiakiVN),Mizuno,JPX Limited Edition G7 [ChiakiVN],3.516.000 ₫,5U (75-79g),Nặng đầu,Cứng,ChiakiVN,3516000,78.0,4.3,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Mizuno Fortius 11 Quick Gen 7 (ShopVNB),Mizuno,Fortius 11 Quick G7 [ShopVNB],4.066.000 ₫,3U (85-89g),Siêu nặng đầu,Cứng,ShopVNB,4066000,88.0,4.8,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông VNB V200 Xanh Gen 7 (FBSport),VNB,V200 Xanh G7 [FBSport],522.000 ₫,4U (80-84g),Nặng đầu,Hơi dẻo,FBSport,522000,83.0,4.3,2.5,Đầy đủ thông số gốc
+Vợt Cầu Lông VNB V88 Cam Gen 7 (ChiakiVN),VNB,V88 Cam G7 [ChiakiVN],481.000 ₫,5U (75-79g),Nặng đầu,Hơi dẻo,ChiakiVN,481000,78.0,4.3,2.5,Đầy đủ thông số gốc
+Vợt Cầu Lông VNB TC88B Gen 7 (ShopVNB),VNB,TC88B G7 [ShopVNB],767.000 ₫,3U (85-89g),Nặng đầu,Trung bình,ShopVNB,767000,88.0,4.3,3.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Kumpoo Power Control K520 Pro Gen 7 (FBSport),Kumpoo,Power Control K520 Pro G7 [FBSport],694.000 ₫,4U (80-84g),Cân bằng,Hơi dẻo,FBSport,694000,83.0,3.0,2.5,Đầy đủ thông số gốc
+Vợt Cầu Lông Apacs Nano Fusion Speed 722 Gen 7 (ChiakiVN),Apacs,Nano Fusion Speed 722 G7 [ChiakiVN],574.000 ₫,5U (75-79g),Cân bằng,Dẻo,ChiakiVN,574000,78.0,3.0,2.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Proace Stroke 316 Gen 7 (ShopVNB),Proace,Stroke 316 G7 [ShopVNB],1.004.000 ₫,3U (85-89g),,Trung bình,ShopVNB,1004000,88.0,3.0,3.0,Thiếu điểm cân bằng -> Mặc định Cân bằng (3.0)
+Vợt Cầu Lông Yonex Astrox 100ZZ Gen 8 (FBSport),Yonex,Astrox 100ZZ G8 [FBSport],4.233.000 ₫,4U (80-84g),Siêu nặng đầu,Siêu cứng,FBSport,4233000,83.0,4.8,5.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Astrox 88D Pro Gen 8 (ChiakiVN),Yonex,Astrox 88D Pro G8 [ChiakiVN],3.805.000 ₫,5U (75-79g),Siêu nặng đầu,Cứng,ChiakiVN,3805000,78.0,4.8,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Astrox 88S Pro Gen 8 (ShopVNB),Yonex,Astrox 88S Pro G8 [ShopVNB],4.373.000 ₫,3U (85-89g),Nặng đầu,Cứng,ShopVNB,4373000,88.0,4.3,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Arcsaber 11 Pro Gen 8 (FBSport),Yonex,Arcsaber 11 Pro G8 [FBSport],4.373.000 ₫,4U (80-84g),Cân bằng,Cứng,FBSport,4373000,83.0,3.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Nanoflare 1000Z Gen 8 (ChiakiVN),Yonex,Nanoflare 1000Z G8 [ChiakiVN],4.622.000 ₫,5U (75-79g),Hơi nhẹ đầu,Siêu cứng,ChiakiVN,4622000,78.0,2.5,5.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Nanoflare 800 Pro Gen 8 (ShopVNB),Yonex,Nanoflare 800 Pro G8 [ShopVNB],4.219.000 ₫,3U (85-89g),Hơi nhẹ đầu,Cứng,ShopVNB,4219000,88.0,2.5,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Duora Z-Strike Gen 8 (FBSport),Yonex,Duora Z-Strike G8 [FBSport],4.012.000 ₫,4U (80-84g),Nặng đầu,Siêu cứng,FBSport,4012000,83.0,4.3,5.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Nanoflare 700 Play Gen 8 (ChiakiVN),Yonex,Nanoflare 700 Play G8 [ChiakiVN],1.277.000 ₫,5U (75-79g),Hơi nhẹ đầu,Dẻo,ChiakiVN,1277000,78.0,2.5,2.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Yonex Astrox 77 Play Gen 8 (ShopVNB),Yonex,Astrox 77 Play G8 [ShopVNB],1.386.000 ₫,3U (85-89g),Nặng đầu,,ShopVNB,1386000,88.0,4.3,3.0,Thiếu độ cứng -> Mặc định Trung bình (3.0)
+Vợt Cầu Lông Li-Ning Axforce 100 Gen 8 (FBSport),Li-Ning,Axforce 100 G8 [FBSport],4.293.000 ₫,4U (80-84g),Siêu nặng đầu,Siêu cứng,FBSport,4293000,83.0,4.8,5.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Axforce 90 Max Gen 8 (ChiakiVN),Li-Ning,Axforce 90 Max G8 [ChiakiVN],4.281.000 ₫,5U (75-79g),Siêu nặng đầu,Cứng,ChiakiVN,4281000,78.0,4.8,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Halbertec 9000 Gen 8 (ShopVNB),Li-Ning,Halbertec 9000 G8 [ShopVNB],3.903.000 ₫,3U (85-89g),Cân bằng,Cứng,ShopVNB,3903000,88.0,3.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Halbertec 8000 Gen 8 (FBSport),Li-Ning,Halbertec 8000 G8 [FBSport],3.530.000 ₫,4U (80-84g),,Cứng,FBSport,3530000,83.0,3.0,4.3,Thiếu điểm cân bằng -> Mặc định Cân bằng (3.0)
+Vợt Cầu Lông Li-Ning Bladex 900 Moon Gen 8 (ChiakiVN),Li-Ning,Bladex 900 Moon G8 [ChiakiVN],4.202.000 ₫,5U (75-79g),Nhẹ đầu,Cứng,ChiakiVN,4202000,78.0,2.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Tectonic 7 Gen 8 (ShopVNB),Li-Ning,Tectonic 7 G8 [ShopVNB],2.839.000 ₫,3U (85-89g),Hơi nặng đầu,Trung bình,ShopVNB,2839000,88.0,3.6,3.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Li-Ning Windstorm 72 Gen 8 (FBSport),Li-Ning,Windstorm 72 G8 [FBSport],2.247.000 ₫,4U (80-84g),Nặng đầu,Dẻo,FBSport,2247000,83.0,4.3,2.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Victor Thruster Ryuga II Gen 8 (ChiakiVN),Victor,Thruster Ryuga II G8 [ChiakiVN],3.623.000 ₫,5U (75-79g),Siêu nặng đầu,Cứng,ChiakiVN,3623000,78.0,4.8,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Victor AuraSpeed 90K II Gen 8 (ShopVNB),Victor,AuraSpeed 90K II G8 [ShopVNB],3.506.000 ₫,3U (85-89g),Cân bằng,Cứng,ShopVNB,3506000,88.0,3.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Victor Brave Sword 12 Gen 8 (FBSport),Victor,Brave Sword 12 G8 [FBSport],2.951.000 ₫,4U (80-84g),Cân bằng,Trung bình,FBSport,2951000,83.0,3.0,3.0,Đầy đủ thông số gốc
+Vợt Cầu Lông Victor DriveX 9X Gen 8 (ChiakiVN),Victor,DriveX 9X G8 [ChiakiVN],3.345.000 ₫,5U (75-79g),Cân bằng,Cứng,ChiakiVN,3345000,78.0,3.0,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Mizuno JPX Limited Edition Gen 8 (ShopVNB),Mizuno,JPX Limited Edition G8 [ShopVNB],3.733.000 ₫,3U (85-89g),Nặng đầu,Cứng,ShopVNB,3733000,88.0,4.3,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông Mizuno Fortius 11 Quick Gen 8 (FBSport),Mizuno,Fortius 11 Quick G8 [FBSport],4.243.000 ₫,4U (80-84g),Siêu nặng đầu,Cứng,FBSport,4243000,83.0,4.8,4.3,Đầy đủ thông số gốc
+Vợt Cầu Lông VNB V200 Xanh Gen 8 (ChiakiVN),VNB,V200 Xanh G8 [ChiakiVN],499.000 ₫,5U (75-79g),Nặng đầu,Hơi dẻo,ChiakiVN,499000,78.0,4.3,2.5,Đầy đủ thông số gốc
+Vợt Cầu Lông VNB V88 Cam Gen 8 (ShopVNB),VNB,V88 Cam G8 [ShopVNB],482.000 ₫,3U (85-89g),Nặng đầu,Hơi dẻo,ShopVNB,482000,88.0,4.3,2.5,Đầy đủ thông số gốc
