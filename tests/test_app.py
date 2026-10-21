@@ -82,3 +82,17 @@ def test_real_recommendations_provenance_and_mode_switch():
     at.selectbox(key="data_mode").select("Demo thuật toán").run()
     assert not at.exception
     assert at.metric[0].value == "220"
+
+
+def test_search_explains_results_hidden_by_budget():
+    at = AppTest.from_file(str(APP), default_timeout=30).run()
+    at.text_input(key="real_query").set_value("100zz").run()
+    assert not at.exception
+    assert at.metric[2].value == "0"
+    assert any("bị ẩn vì vượt ngân sách" in item.value for item in at.info)
+    at.number_input(key="real_budget").set_value(6_000_000).run()
+    assert not at.exception
+    results = at.dataframe[0].value
+    assert len(results) == 4
+    assert results["model"].str.contains("100zz", case=False).all()
+    assert not any("bị ẩn vì vượt ngân sách" in item.value for item in at.info)

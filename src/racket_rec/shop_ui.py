@@ -137,6 +137,7 @@ def show_shop_catalog(root: Path) -> None:
         filtered = filtered[filtered["source"].isin(shops)]
     if brands:
         filtered = filtered[filtered["brand"].isin(brands)]
+    over_budget = filtered[filtered["price_vnd"].gt(budget)]
     within_budget = filtered["price_vnd"].le(budget)
     if contact:
         within_budget |= filtered["price_vnd"].isna()
@@ -159,6 +160,15 @@ def show_shop_catalog(root: Path) -> None:
         st.caption(
             "Lọc theo giá thấp nhất shop niêm yết; khoảng giá giữ nguyên. Ô thông số trống nghĩa là chưa ghi nhận được từ shop. Các dòng có tên gần giống chưa chắc cùng phiên bản."
         )
+        if query.strip() and not over_budget.empty:
+            lowest = f"{over_budget['price_vnd'].min():,.0f}".replace(",", ".")
+            limit = f"{budget:,.0f}".replace(",", ".")
+            st.info(
+                f"Có {len(over_budget)} chào bán khớp từ khóa đang bị ẩn vì vượt ngân sách {limit} ₫. "
+                f"Giá ghi nhận thấp nhất trong nhóm này là {lowest} ₫. "
+                "Tăng ngân sách ở thanh bên để xem các kết quả đó.",
+                icon=":material/filter_alt:",
+            )
         if filtered.empty:
             st.warning("Không có kết quả. Thử đổi từ khóa, shop hoặc ngân sách.")
             return
