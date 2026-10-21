@@ -19,6 +19,7 @@ from racket_rec.recommender import (
     recommend,
 )
 from racket_rec.scraper import generate_multi_source_catalog
+from racket_rec.shop_ui import show_shop_catalog
 from racket_rec.viz import radar_chart
 
 st.set_page_config(
@@ -49,6 +50,13 @@ st.markdown("### Tìm cây vợt hợp với cách bạn chơi.")
 st.caption(
     "Chọn theo lối chơi, trình độ và ngân sách. So sánh thông số trước khi quyết định."
 )
+data_mode = st.sidebar.selectbox(
+    "Dữ liệu", ["Giá thật từ shop", "Demo thuật toán"], key="data_mode"
+)
+if data_mode == "Giá thật từ shop":
+    show_shop_catalog(ROOT_DIR)
+    st.stop()
+
 catalog_path = ROOT_DIR / "data/processed/rackets_cleaned.csv"
 catalog = load_catalog(catalog_path.stat().st_mtime_ns if catalog_path.exists() else 0)
 st.info(

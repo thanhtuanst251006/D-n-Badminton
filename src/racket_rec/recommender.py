@@ -47,8 +47,19 @@ def ideal_vector(prefs: UserPrefs) -> dict[str, float]:
 def filter_candidates(catalog: pd.DataFrame, prefs: UserPrefs) -> pd.DataFrame:
     """Apply the same eligibility rules for recommendations and evaluation."""
     df = catalog.copy()
+    if "specs_complete" in df:
+        df = df[df["specs_complete"].eq(True)]
+        df = df.dropna(
+            subset=["price_vnd", "weight_g", "balance_score", "stiffness_score"]
+        )
+        if "availability" in df:
+            df = df[df["availability"] != "Shop ghi hết hàng"]
+        if "price_kind" in df:
+            df = df[df["price_kind"] != "from"]
     if prefs.budget_vnd is not None:
         df = df[df["price_vnd"] <= prefs.budget_vnd]
+        if "price_max_vnd" in df:
+            df = df[df["price_max_vnd"] <= prefs.budget_vnd]
     df = df[df["stiffness_score"] <= LEVEL_MAX_STIFFNESS.get(prefs.level, 5.0)]
     if prefs.wrist_injury:
         df = df[(df["weight_g"] <= 84.0) & (df["stiffness_score"] <= 3.2)]

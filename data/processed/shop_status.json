@@ -1,0 +1,20 @@
+[
+  {
+    "shop": "ShopVNB",
+    "collected_at": "2026-10-21T06:06:16+00:00",
+    "offers": 173,
+    "errors": []
+  },
+  {
+    "shop": "FBShop",
+    "collected_at": "2026-10-21T06:06:16+00:00",
+    "offers": 117,
+    "errors": []
+  },
+  {
+    "shop": "HVShop",
+    "collected_at": "2026-10-21T06:06:16+00:00",
+    "offers": 192,
+    "errors": []
+  }
+]

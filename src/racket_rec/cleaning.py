@@ -73,10 +73,10 @@ def clean_stiffness(s_str):
         return 5.0
     if "hơi cứng" in s:
         return 3.8
-    if "cứng" in s or "stiff" in s:
-        return 4.3
     if "trung bình" in s or "medium" in s:
         return 3.0
+    if "cứng" in s or "stiff" in s:
+        return 4.3
     if "hơi dẻo" in s:
         return 2.5
     if "dẻo" in s or "flexible" in s:
