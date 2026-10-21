@@ -4,110 +4,264 @@ from pathlib import Path
 ROOT_DIR = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT_DIR / "src"))
 
-import numpy as np
 import pandas as pd
-import streamlit as st
 import plotly.express as px
+import streamlit as st
 
-from racket_rec.scraper import generate_multi_source_catalog
+from racket_rec.alerts import detect_price_anomalies, generate_demo_history
 from racket_rec.cleaning import clean_rackets
-from racket_rec.recommender import LEVEL_MAX_STIFFNESS, UserPrefs, ideal_vector, recommend
 from racket_rec.evaluation import evaluate_models_hit_at_3, run_ablation_study
-from racket_rec.alerts import detect_price_anomalies
+from racket_rec.recommender import (
+    LEVEL_MAX_STIFFNESS,
+    UserPrefs,
+    filter_candidates,
+    ideal_vector,
+    recommend,
+)
+from racket_rec.scraper import generate_multi_source_catalog
 from racket_rec.viz import radar_chart
 
-st.set_page_config(page_title="Hệ thống Gợi ý Vợt Cầu Lông", page_icon="🏸", layout="wide")
+st.set_page_config(
+    page_title="Racket Pro · Tìm vợt hợp bạn", page_icon="🏸", layout="wide"
+)
 
-@st.cache_data
-def load_catalog():
-    clean_path = ROOT_DIR / "data" / "processed" / "rackets_cleaned.csv"
-    if clean_path.exists():
-        return pd.read_csv(clean_path)
-    raw_df = generate_multi_source_catalog(220)
-    cleaned = clean_rackets(raw_df)
-    clean_path.parent.mkdir(parents=True, exist_ok=True)
-    cleaned.to_csv(clean_path, index=False, encoding="utf-8-sig")
-    return cleaned
 
-catalog = load_catalog()
+@st.cache_data(ttl=3600, max_entries=2)
+def load_catalog(modified_ns: int) -> pd.DataFrame:
+    """Invalidate cache when the catalog changes; never write files on rerun."""
+    path = ROOT_DIR / "data/processed/rackets_cleaned.csv"
+    if path.exists():
+        return pd.read_csv(path)
+    return clean_rackets(generate_multi_source_catalog(220))
 
-st.title("🏸 Hệ Thống Gợi Ý Vợt Cầu Lông & Theo Dõi Biến Động Giá")
-st.caption(f"Đang hoạt động trên tập dữ liệu **{len(catalog)} cây vợt** từ 3 nguồn (ShopVNB, FBSport, ChiakiVN).")
+
+@st.cache_data(ttl=3600, max_entries=4)
+def evaluate_catalog(catalog: pd.DataFrame):
+    return evaluate_models_hit_at_3(catalog), run_ablation_study(catalog)
+
+
+def money(value: float) -> str:
+    return f"{value:,.0f}".replace(",", ".") + " ₫"
+
+
+st.title("🏸 Racket Pro")
+st.markdown("### Tìm cây vợt hợp với cách bạn chơi.")
+st.caption(
+    "Chọn theo lối chơi, trình độ và ngân sách. So sánh thông số trước khi quyết định."
+)
+catalog_path = ROOT_DIR / "data/processed/rackets_cleaned.csv"
+catalog = load_catalog(catalog_path.stat().st_mtime_ns if catalog_path.exists() else 0)
+st.info(
+    "Bản demo: danh mục và lịch sử giá là dữ liệu mô phỏng; tên nguồn chỉ là nhãn minh họa.",
+    icon=":material/info:",
+)
 
 with st.sidebar:
-    st.header("🎯 Phiếu hỏi người dùng")
-    attack_pct = st.slider("Lối chơi: Điều cầu/Thủ ⟷ Tấn công", 0, 100, 45)
-    level = st.selectbox("Trình độ hiện tại", list(LEVEL_MAX_STIFFNESS.keys()), index=1)
-    budget = st.number_input("Ngân sách tối đa (VNĐ)", 500_000, 10_000_000, 3_800_000, step=100_000)
-    wrist_injury = st.checkbox("Có tiền sử đau cổ tay / khuỷu tay (Tennis Elbow)")
-    top_k = st.slider("Số lượng vợt gợi ý", 1, 6, 3)
-
-prefs = UserPrefs(attack_ratio=attack_pct / 100.0, level=level, budget_vnd=budget, wrist_injury=wrist_injury)
-target_vec = ideal_vector(prefs)
-
-tab1, tab2, tab3 = st.tabs([
-    "🏸 Gợi ý & So sánh Radar",
-    "📊 Đánh giá Mô hình (Hit@3 & Ablation)",
-    "📉 Theo dõi Giá & Cảnh báo Z-Score"
-])
-
-with tab1:
-    top_rackets = recommend(catalog, prefs, k=top_k)
-    if top_rackets.empty:
-        st.warning("Không tìm thấy cây vợt nào thỏa mãn ràng buộc cứng. Hãy thử tăng ngân sách hoặc bỏ chọn chấn thương.")
-    else:
-        col_left, col_right = st.columns([1.15, 1])
-        with col_left:
-            st.subheader("Top vợt phù hợp nhất")
-            for idx, r in top_rackets.iterrows():
-                with st.container(border=True):
-                    st.markdown(f"### #{idx + 1}. {r['brand']} {r['model']} — Độ khớp: `{r['match_pct']}%`")
-                    st.write(
-                        f"💰 **Giá:** `{int(r['price_vnd']):,} ₫` | **Nguồn:** `{r['source']}` | "
-                        f"**Trọng lượng:** `{int(r['weight_g'])}g` | **Cân bằng:** `{r['balance_score']}/5` | **Độ cứng:** `{r['stiffness_score']}/5`"
-                    )
-                    st.info(f"💡 **Giải thích:** {r['reason']}")
-                    st.caption(f"🛠️ Trạng thái dữ liệu: {r['imputation_reason']}")
-        with col_right:
-            st.subheader("Biểu đồ Radar đối chiếu thông số")
-            st.plotly_chart(radar_chart(top_rackets, target_vec), use_container_width=True)
-
-with tab2:
-    st.subheader("Thực nghiệm Đánh giá Mô hình trên Tập khảo sát CLB (Ground Truth)")
-    col_a, col_b = st.columns(2)
-    with col_a:
-        st.markdown("**1. So sánh các thuật toán bằng độ đo Hit@3**")
-        df_eval = evaluate_models_hit_at_3(catalog)
-        st.dataframe(df_eval, use_container_width=True, hide_index=True)
-    with col_b:
-        st.markdown("**2. Nghiên cứu loại bỏ đặc trưng (Ablation Study)**")
-        df_ablation = run_ablation_study(catalog)
-        st.dataframe(df_ablation, use_container_width=True, hide_index=True)
-
-    st.warning(
-        "**Hạn chế của bộ nhãn (Báo cáo trong README):**\n"
-        "- Bộ nhãn khảo sát hiện tại quy mô nhỏ (15-30 người chơi cấp CLB), mang tính chủ quan theo cảm giác tay cá nhân.\n"
-        "- Chưa tách biệt ảnh hưởng của loại cước đan (VD: Exbolt 63 hay BG66 Ultimax) và mức căng (kg) lên cảm giác cứng/nảy thực tế của mặt vợt."
+    st.header("Hồ sơ của bạn", anchor=False)
+    attack_pct = st.slider("Thiên về tấn công (%)", 0, 100, 45, key="attack")
+    st.caption("0%: điều cầu / phòng thủ · 100%: chuyên công")
+    level = st.selectbox("Trình độ", list(LEVEL_MAX_STIFFNESS), index=1, key="level")
+    budget = st.number_input(
+        "Ngân sách tối đa (VNĐ)", 0, 10_000_000, 3_800_000, step=100_000, key="budget"
     )
+    wrist_injury = st.toggle("Ưu tiên vợt nhẹ, đũa mềm", key="wrist")
+    st.caption("Bật để giới hạn trọng lượng ≤ 84g và độ cứng ≤ 3,2/5.")
+    top_k = st.slider("Số vợt gợi ý", 1, 6, 3, key="top_k")
+    st.subheader("Thu hẹp lựa chọn", anchor=False)
+    brands = st.multiselect(
+        "Thương hiệu", sorted(catalog["brand"].unique()), key="brands"
+    )
+    sources = st.multiselect(
+        "Nguồn minh họa", sorted(catalog["source"].unique()), key="sources"
+    )
+    query = st.text_input(
+        "Tìm tên vợt", placeholder="Ví dụ: Astrox, Brave Sword…", key="search"
+    )
+    st.caption("Racket Pro · Portfolio demo")
 
-with tab3:
-    st.subheader("Biến động giá & Phát hiện giảm giá bất thường (Z-Score)")
-    np.random.seed(42)
-    dates = pd.date_range(end=pd.Timestamp.today(), periods=14).strftime("%Y-%m-%d")
-    hist_rows = []
-    sample_models = catalog.head(4)[["model", "price_vnd"]].values
-    for m_name, base_p in sample_models:
-        for d_idx, d_str in enumerate(dates):
-            factor = 0.82 if (d_idx == 13 and m_name == sample_models[0][0]) else np.random.uniform(0.98, 1.02)
-            hist_rows.append({"model": m_name, "date": d_str, "price_vnd": int(base_p * factor)})
-    hist_df = pd.DataFrame(hist_rows)
+prefs = UserPrefs(attack_pct / 100, level, budget, wrist_injury)
+filtered = catalog
+if brands:
+    filtered = filtered[filtered["brand"].isin(brands)]
+if sources:
+    filtered = filtered[filtered["source"].isin(sources)]
+if query.strip():
+    filtered = filtered[
+        filtered["model"].str.contains(query.strip(), case=False, regex=False, na=False)
+    ]
+candidates = filter_candidates(filtered, prefs)
+top_rackets = recommend(filtered, prefs, k=top_k)
+metrics = st.columns(3)
+metrics[0].metric("Vợt trong danh mục", len(catalog), border=True)
+metrics[1].metric("Đáp ứng lựa chọn", len(candidates), border=True)
+metrics[2].metric("Ngân sách của bạn", money(budget), border=True)
+view = st.segmented_control(
+    "Khám phá",
+    ["Gợi ý cho bạn", "Danh mục vợt", "Theo dõi giá", "Đánh giá mô hình"],
+    default="Gợi ý cho bạn",
+    key="view",
+)
 
-    fig_line = px.line(hist_df, x="date", y="price_vnd", color="model", markers=True, title="Lịch sử giá 14 ngày gần nhất")
-    st.plotly_chart(fig_line, use_container_width=True)
-
-    anomalies = detect_price_anomalies(hist_df)
-    st.markdown("**🔔 Cảnh báo Giảm giá Bất thường (Tự động bắn qua Telegram Bot):**")
-    if not anomalies.empty:
-        st.dataframe(anomalies, use_container_width=True, hide_index=True)
+if view == "Gợi ý cho bạn":
+    if top_rackets.empty:
+        st.warning(
+            "Chưa có vợt phù hợp. Thử tăng ngân sách, đổi từ khóa hoặc xóa bộ lọc thương hiệu / nguồn."
+        )
     else:
-        st.success("Không có biến động giá bất thường trong ngày hôm nay.")
+        left, right = st.columns([1.1, 1])
+        with left:
+            st.subheader("Lựa chọn dành cho bạn", anchor=False)
+            for idx, row in top_rackets.iterrows():
+                with st.container(border=True):
+                    st.caption(f"LỰA CHỌN {idx + 1} · {row['brand']} · {row['source']}")
+                    st.subheader(row["model"], anchor=False)
+                    st.markdown(
+                        f"**{money(row['price_vnd'])}** · :green[Độ khớp {row['match_pct']}%]"
+                    )
+                    st.progress(float(row["match_pct"]) / 100)
+                    st.caption(
+                        f"{row['weight_g']:g} g · Cân bằng {row['balance_score']:g}/5 · Độ cứng {row['stiffness_score']:g}/5"
+                    )
+                    with st.expander("Vì sao vợt này phù hợp?"):
+                        st.write(row["reason"])
+                        st.caption(f"Chất lượng dữ liệu: {row['imputation_reason']}")
+        with right:
+            st.subheader("So sánh với mục tiêu", anchor=False)
+            st.plotly_chart(
+                radar_chart(top_rackets, ideal_vector(prefs)),
+                width="stretch",
+                alt="So sánh thông số tối đa 3 vợt với mục tiêu.",
+            )
+            st.caption(
+                "Radar hiển thị tối đa 3 vợt đầu tiên; trọng lượng được quy đổi sang thang 1–5."
+            )
+            st.caption(
+                "Độ khớp là điểm tương đồng thông số, không phải xác suất hài lòng khi sử dụng."
+            )
+        st.download_button(
+            "Tải danh sách gợi ý",
+            top_rackets.to_csv(index=False).encode("utf-8-sig"),
+            "racket-pro-goi-y.csv",
+            "text/csv",
+            icon=":material/download:",
+        )
+
+elif view == "Danh mục vợt":
+    st.subheader("Danh mục đáp ứng hồ sơ", anchor=False)
+    st.caption(
+        "Áp dụng toàn bộ bộ lọc, ngân sách và giới hạn thông số trong hồ sơ của bạn."
+    )
+    if candidates.empty:
+        st.warning("Không có kết quả với bộ lọc hiện tại.")
+    else:
+        sort = st.selectbox(
+            "Sắp xếp", ["Giá tăng dần", "Giá giảm dần", "Tên vợt"], key="sort"
+        )
+        ordered = candidates.sort_values(
+            "model" if sort == "Tên vợt" else "price_vnd",
+            ascending=sort != "Giá giảm dần",
+        )
+        display = ordered[
+            [
+                "brand",
+                "model",
+                "price_vnd",
+                "weight_g",
+                "balance_score",
+                "stiffness_score",
+                "source",
+            ]
+        ]
+        st.dataframe(
+            display,
+            hide_index=True,
+            width="stretch",
+            alt="Danh mục vợt đáp ứng bộ lọc.",
+            column_config={
+                "brand": "Hãng",
+                "model": "Tên vợt",
+                "price_vnd": st.column_config.NumberColumn(
+                    "Giá demo (VNĐ)", format="localized"
+                ),
+                "weight_g": "Trọng lượng (g)",
+                "balance_score": "Cân bằng /5",
+                "stiffness_score": "Độ cứng /5",
+                "source": "Nguồn minh họa",
+            },
+        )
+        st.download_button(
+            "Tải danh mục đã lọc",
+            display.to_csv(index=False).encode("utf-8-sig"),
+            "racket-pro-danh-muc.csv",
+            "text/csv",
+            icon=":material/download:",
+        )
+
+elif view == "Theo dõi giá":
+    st.subheader("Lịch sử giá mô phỏng", anchor=False)
+    st.caption(
+        "Dữ liệu demo 14 ngày có cài sẵn một mức giảm để minh họa. Ứng dụng chưa theo dõi giá trực tuyến hoặc tự gửi Telegram."
+    )
+    if candidates.empty:
+        st.warning("Không có vợt đáp ứng bộ lọc để xem lịch sử giá.")
+    else:
+        models = st.multiselect(
+            "Chọn tối đa 4 vợt",
+            candidates["model"].unique().tolist(),
+            default=candidates["model"].head(4).tolist(),
+            max_selections=4,
+            key="price_models",
+        )
+        if models:
+            selected = candidates[candidates["model"].isin(models)]
+            today = pd.Timestamp.now(tz="Asia/Ho_Chi_Minh").date()
+            history = generate_demo_history(selected, end_date=str(today))
+            fig = px.line(
+                history,
+                x="date",
+                y="price_vnd",
+                color="model",
+                markers=True,
+                labels={"date": "Ngày", "price_vnd": "Giá demo (VNĐ)", "model": "Vợt"},
+            )
+            st.plotly_chart(
+                fig,
+                width="stretch",
+                alt="Lịch sử giá mô phỏng trong 14 ngày của các vợt đã chọn.",
+            )
+            anomalies = detect_price_anomalies(history)
+            if anomalies.empty:
+                st.success("Không phát hiện mức giảm vượt ngưỡng trong dữ liệu demo.")
+            else:
+                st.markdown("**Mức giảm bất thường trong dữ liệu demo**")
+                st.dataframe(
+                    anomalies,
+                    hide_index=True,
+                    width="stretch",
+                    alt="Các mức giảm giá bất thường trong dữ liệu demo.",
+                )
+        else:
+            st.info("Chọn ít nhất một vợt để xem biểu đồ.")
+
+elif view == "Đánh giá mô hình":
+    st.subheader("Thử nghiệm trên 15 tình huống mẫu", anchor=False)
+    st.caption(
+        "Các tình huống và nhãn được khai báo trong mã nguồn, chưa có bằng chứng khảo sát độc lập. Kết quả phục vụ minh họa, không đại diện hiệu quả thực tế."
+    )
+    st.caption(
+        "Đánh giá dùng toàn bộ danh mục; cả ba mô hình áp dụng cùng ràng buộc ngân sách và thông số. KNN chuẩn hóa theo miền đặc trưng; Decision Tree học ánh xạ thông số → tên vợt trong danh mục."
+    )
+    evaluation, ablation = evaluate_catalog(catalog)
+    st.dataframe(
+        evaluation,
+        hide_index=True,
+        width="stretch",
+        alt="Hit@3 của ba mô hình trên 15 tình huống mẫu.",
+    )
+    st.subheader("Ảnh hưởng của từng thông số", anchor=False)
+    st.dataframe(
+        ablation,
+        hide_index=True,
+        width="stretch",
+        alt="Kết quả đánh giá khi lần lượt loại bỏ từng đặc trưng.",
+    )

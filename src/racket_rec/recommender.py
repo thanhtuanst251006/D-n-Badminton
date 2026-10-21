@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Optional, Dict
+
 import pandas as pd
 
 LEVEL_MAX_STIFFNESS = {
@@ -8,24 +8,28 @@ LEVEL_MAX_STIFFNESS = {
     "Nâng cao / Bán chuyên (Advanced)": 5.0,
 }
 
+
 @dataclass
 class UserPrefs:
-    attack_ratio: float          # 0.0 (Điều cầu/Phòng thủ) -> 1.0 (Chuyên công)
-    level: str                   # Trình độ người chơi
-    budget_vnd: Optional[int]    # Ngân sách tối đa
-    wrist_injury: bool = False   # Có tiền sử đau cổ tay / khuỷu tay không
+    attack_ratio: float  # 0.0 (Điều cầu/Phòng thủ) -> 1.0 (Chuyên công)
+    level: str  # Trình độ người chơi
+    budget_vnd: int | None  # Ngân sách tối đa
+    wrist_injury: bool = False  # Có tiền sử đau cổ tay / khuỷu tay không
 
-def ideal_vector(prefs: UserPrefs) -> Dict[str, float]:
+
+def ideal_vector(prefs: UserPrefs) -> dict[str, float]:
     """Chuyển phiếu hỏi người dùng thành vector thông số lý tưởng."""
     target_balance = 2.0 + 2.8 * prefs.attack_ratio
-    
+
     base_stiff = {
         "Mới chơi (Newbie)": 2.2,
         "Phong trào (Intermediate)": 3.3,
         "Nâng cao / Bán chuyên (Advanced)": 4.3,
     }.get(prefs.level, 3.0)
-    target_stiffness = min(LEVEL_MAX_STIFFNESS.get(prefs.level, 5.0), base_stiff + 0.5 * prefs.attack_ratio)
-    
+    target_stiffness = min(
+        LEVEL_MAX_STIFFNESS.get(prefs.level, 5.0), base_stiff + 0.5 * prefs.attack_ratio
+    )
+
     target_weight = 83.0 if prefs.attack_ratio < 0.75 else 85.5
 
     if prefs.wrist_injury:
@@ -39,11 +43,23 @@ def ideal_vector(prefs: UserPrefs) -> Dict[str, float]:
         "stiffness_score": round(target_stiffness, 2),
     }
 
+
+def filter_candidates(catalog: pd.DataFrame, prefs: UserPrefs) -> pd.DataFrame:
+    """Apply the same eligibility rules for recommendations and evaluation."""
+    df = catalog.copy()
+    if prefs.budget_vnd is not None:
+        df = df[df["price_vnd"] <= prefs.budget_vnd]
+    df = df[df["stiffness_score"] <= LEVEL_MAX_STIFFNESS.get(prefs.level, 5.0)]
+    if prefs.wrist_injury:
+        df = df[(df["weight_g"] <= 84.0) & (df["stiffness_score"] <= 3.2)]
+    return df
+
+
 def recommend(
     catalog: pd.DataFrame,
     prefs: UserPrefs,
     k: int = 5,
-    weights: Optional[Dict[str, float]] = None
+    weights: dict[str, float] | None = None,
 ) -> pd.DataFrame:
     """
     Bước 1: Lọc theo ràng buộc cứng (Ngân sách, Trình độ, Chấn thương cổ tay).
@@ -52,16 +68,9 @@ def recommend(
     if weights is None:
         weights = {"weight_g": 0.25, "balance_score": 0.45, "stiffness_score": 0.30}
 
-    df = catalog.copy()
-
-    if prefs.budget_vnd and prefs.budget_vnd > 0:
-        df = df[df["price_vnd"] <= prefs.budget_vnd]
-
-    max_stiff = LEVEL_MAX_STIFFNESS.get(prefs.level, 5.0)
-    df = df[df["stiffness_score"] <= max_stiff]
-
-    if prefs.wrist_injury:
-        df = df[(df["weight_g"] <= 84.0) & (df["stiffness_score"] <= 3.2)]
+    if k < 1:
+        raise ValueError("k must be at least 1")
+    df = filter_candidates(catalog, prefs)
 
     if df.empty:
         return df
@@ -93,9 +102,13 @@ def recommend(
             f"Trọng lượng {c_weight}% ({int(row['weight_g'])}g)."
         )
         if prefs.wrist_injury:
-            reason_str += " [Đạt chuẩn an toàn cổ tay]"
+            reason_str += " [Đáp ứng giới hạn trọng lượng và độ cứng đã chọn]"
         explanations.append(reason_str)
 
     df["match_pct"] = scores
     df["reason"] = explanations
-    return df.sort_values(by=["match_pct", "price_vnd"], ascending=[False, True]).head(k).reset_index(drop=True)
+    return (
+        df.sort_values(by=["match_pct", "price_vnd"], ascending=[False, True])
+        .head(k)
+        .reset_index(drop=True)
+    )

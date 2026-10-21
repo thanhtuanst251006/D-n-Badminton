@@ -1,44 +1,50 @@
-import re
-import time
 import random
-import pandas as pd
+import time
 from pathlib import Path
 
+import pandas as pd
+
 HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0"}
+
 
 def scrape_shopvnb(max_pages=2):
     """Cào dữ liệu thực tế từ ShopVNB."""
     import requests
     from bs4 import BeautifulSoup
+
     rows = []
     for page in range(1, max_pages + 1):
         url = f"https://shopvnb.com/vot-cau-long.html?page={page}"
         try:
             resp = requests.get(url, headers=HEADERS, timeout=10)
+            resp.raise_for_status()
             soup = BeautifulSoup(resp.text, "html.parser")
             for item in soup.select(".product-box, .item_product_main"):
                 title_el = item.select_one(".product-name a, h3 a")
                 price_el = item.select_one(".price-box .price, .price")
                 if title_el and price_el:
-                    rows.append({
-                        "title": title_el.get_text(strip=True),
-                        "price_raw": price_el.get_text(strip=True),
-                        "weight_raw": "4U",
-                        "balance_raw": "Cân bằng",
-                        "stiffness_raw": "Trung bình",
-                        "source": "ShopVNB"
-                    })
+                    rows.append(
+                        {
+                            "title": title_el.get_text(strip=True),
+                            "price_raw": price_el.get_text(strip=True),
+                            "weight_raw": "4U",
+                            "balance_raw": "Cân bằng",
+                            "stiffness_raw": "Trung bình",
+                            "source": "ShopVNB",
+                        }
+                    )
             time.sleep(1.0)
-        except Exception as e:
+        except requests.RequestException as e:
             print(f"[ Lỗi cào ShopVNB trang {page} ]: {e}")
     return pd.DataFrame(rows)
 
+
 def generate_multi_source_catalog(n_target=220):
     """
-    Kết hợp dữ liệu từ các dòng vợt chuẩn trên thị trường (ShopVNB, FBSport, ChiakiVN)
-    để đảm bảo đủ 200+ mẫu vợt đa dạng thông số phục vụ huấn luyện và kiểm thử.
+    Sinh danh mục mô phỏng để kiểm thử. Tên nguồn và biến thể là nhãn minh họa,
+    không phải dữ liệu thu thập trực tiếp hoặc thông số sản phẩm đã xác minh.
     """
-    random.seed(42)
+    rng = random.Random(42)
     seeds = [
         ("Yonex", "Astrox 100ZZ", 83, 4.8, 5.0, 4200000),
         ("Yonex", "Astrox 88D Pro", 83, 4.5, 4.5, 4100000),
@@ -72,41 +78,55 @@ def generate_multi_source_catalog(n_target=220):
     sources = ["ShopVNB", "FBSport", "ChiakiVN"]
     weights_label = [(88, "3U (85-89g)"), (83, "4U (80-84g)"), (78, "5U (75-79g)")]
     balances_label = {
-        2.0: "Nhẹ đầu", 2.5: "Hơi nhẹ đầu", 3.0: "Cân bằng",
-        3.5: "Hơi nặng đầu", 4.0: "Nặng đầu", 4.8: "Siêu nặng đầu"
+        2.0: "Nhẹ đầu",
+        2.5: "Hơi nhẹ đầu",
+        3.0: "Cân bằng",
+        3.5: "Hơi nặng đầu",
+        4.0: "Nặng đầu",
+        4.8: "Siêu nặng đầu",
     }
     stiffness_label = {
-        2.0: "Dẻo", 2.5: "Hơi dẻo", 3.0: "Trung bình",
-        4.0: "Cứng", 5.0: "Siêu cứng"
+        2.0: "Dẻo",
+        2.5: "Hơi dẻo",
+        3.0: "Trung bình",
+        4.0: "Cứng",
+        5.0: "Siêu cứng",
     }
 
     rows = []
     for i in range(n_target):
         brand, base_model, w, bal, stiff, base_price = seeds[i % len(seeds)]
         variant_idx = (i // len(seeds)) + 1
-        w_choice = weights_label[i % len(weights_label)][1] if variant_idx > 1 else f"4U ({w}g)"
-        
+        w_choice = (
+            weights_label[i % len(weights_label)][1]
+            if variant_idx > 1
+            else f"4U ({w}g)"
+        )
+
         bal_key = min(balances_label.keys(), key=lambda k: abs(k - bal))
         stiff_key = min(stiffness_label.keys(), key=lambda k: abs(k - stiff))
-        
-        price_jitter = int(base_price * random.uniform(0.92, 1.08) // 1000 * 1000)
+
+        price_jitter = int(base_price * rng.uniform(0.92, 1.08) // 1000 * 1000)
         source = sources[i % len(sources)]
-        
+
         raw_bal = None if (i % 13 == 0) else balances_label[bal_key]
         raw_stiff = None if (i % 17 == 0) else stiffness_label[stiff_key]
 
         title_suffix = f"Gen {variant_idx}" if variant_idx > 1 else "Chính Hãng"
-        rows.append({
-            "title": f"Vợt Cầu Lông {brand} {base_model} {title_suffix} ({source})",
-            "brand": brand,
-            "model": f"{base_model} G{variant_idx} [{source}]",
-            "price_raw": f"{price_jitter:,} ₫".replace(",", "."),
-            "weight_raw": w_choice,
-            "balance_raw": raw_bal,
-            "stiffness_raw": raw_stiff,
-            "source": source
-        })
+        rows.append(
+            {
+                "title": f"Vợt Cầu Lông {brand} {base_model} {title_suffix} ({source})",
+                "brand": brand,
+                "model": f"{base_model} G{variant_idx} [{source}]",
+                "price_raw": f"{price_jitter:,} ₫".replace(",", "."),
+                "weight_raw": w_choice,
+                "balance_raw": raw_bal,
+                "stiffness_raw": raw_stiff,
+                "source": source,
+            }
+        )
     return pd.DataFrame(rows)
+
 
 if __name__ == "__main__":
     Path("data/raw").mkdir(parents=True, exist_ok=True)
