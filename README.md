@@ -17,6 +17,7 @@ Trên macOS/Linux, kích hoạt môi trường bằng `source .venv/bin/activate
 
 ## Tính năng
 
+- Giao diện phù hợp điện thoại: tìm kiếm ngay màn hình chính, bộ lọc mở/đóng tại chỗ, mặc định xem thẻ sản phẩm có nút mở shop toàn chiều rộng. Mỗi trang tối đa 8 thẻ, có chuyển trang ở đầu và cuối danh sách; đổi bộ lọc sẽ về trang đầu. Có thể chuyển sang **Bảng chi tiết** để xem đủ cột và tải CSV.
 - Danh mục giá thật từ [ShopVNB](https://shopvnb.com/vot-cau-long.html), [FBShop](https://fbshop.vn/vot-cau-long/) và [HVShop](https://hvshop.vn/vot-cau-long/). Bản ghi ngày 21/10/2026 gồm **482 chào bán** (173 + 117 + 192), 429 có giá công khai; mỗi dòng là một chào bán, không phải một mẫu vợt duy nhất.
 - Tìm theo tên/dòng vợt, lọc shop, thương hiệu và ngân sách; sắp xếp giá, mở link sản phẩm, xuất CSV tiếng Việt. Giữ nguyên giá khuyến mãi, khoảng giá và giá liên hệ; có thời điểm ghi nhận theo từng chào bán.
 - Gợi ý từ giá thật chỉ dùng các chào bán có đủ thông số shop công bố. Không tự điền giá hoặc thông số bị thiếu. Khoảng giá phải nằm toàn bộ trong ngân sách; nhiều nhóm trọng lượng chưa xác định phiên bản sẽ không được chấm điểm.

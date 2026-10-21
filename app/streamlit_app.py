@@ -46,10 +46,7 @@ def money(value: float) -> str:
 
 
 st.title("🏸 Racket Pro")
-st.markdown("### Tìm cây vợt hợp với cách bạn chơi.")
-st.caption(
-    "Chọn theo lối chơi, trình độ và ngân sách. So sánh thông số trước khi quyết định."
-)
+st.caption("Tìm vợt hợp bạn, xem giá từ các shop.")
 data_mode = st.sidebar.selectbox(
     "Dữ liệu", ["Giá thật từ shop", "Demo thuật toán"], key="data_mode"
 )

@@ -1,6 +1,7 @@
 """Streamlit views for real offers, separate from synthetic demonstrations."""
 
 import json
+from math import ceil
 from pathlib import Path
 
 import pandas as pd
@@ -73,6 +74,75 @@ def show_offer_table(offers: pd.DataFrame) -> None:
     )
 
 
+def change_catalog_page(step: int, pages: int) -> None:
+    st.session_state["real_page"] = min(
+        max(1, st.session_state.get("real_page", 1) + step), pages
+    )
+
+
+def show_offer_cards(offers: pd.DataFrame, signature: tuple) -> None:
+    """Wrap fixed-width cards within their parent, including narrow phone screens."""
+    per_page = 8
+    pages = max(1, ceil(len(offers) / per_page))
+    if st.session_state.get("_real_result_signature") != signature:
+        st.session_state["real_page"] = 1
+        st.session_state["_real_result_signature"] = signature
+    st.session_state["real_page"] = min(
+        max(1, st.session_state.get("real_page", 1)), pages
+    )
+    controls = st.container()
+    start = (st.session_state["real_page"] - 1) * per_page
+    st.caption(
+        f"Hiển thị {start + 1}–{min(start + per_page, len(offers))} / {len(offers)} kết quả"
+    )
+    with st.container(horizontal=True, gap="medium"):
+        for _, row in offers.iloc[start : start + per_page].iterrows():
+            with st.container(border=True, width=340):
+                st.caption(f"{row['source']} · {row['brand']}")
+                st.markdown(f"**{row['model']}**")
+                st.markdown(f"### {row['price_text']}")
+                st.caption("Giá ghi nhận · kiểm tra lại tại shop")
+                st.link_button(
+                    f"Xem tại {row['source']}",
+                    row["product_url"],
+                    icon=":material/open_in_new:",
+                    width="stretch",
+                )
+                with st.expander("Thông số & ghi nhận"):
+                    for label, field in [
+                        ("Trọng lượng", "weight_raw"),
+                        ("Cân bằng", "balance_raw"),
+                        ("Độ cứng", "stiffness_raw"),
+                    ]:
+                        value = row[field] if pd.notna(row[field]) else "Chưa ghi nhận"
+                        st.markdown(f"**{label}:** {value}")
+                    observed = pd.Timestamp(row["collected_at"]).tz_convert(
+                        "Asia/Ho_Chi_Minh"
+                    )
+                    st.caption(f"Ghi nhận: {observed:%d/%m/%Y %H:%M} (giờ Việt Nam)")
+                    st.caption(row["availability"])
+    with controls:
+        st.pagination(pages, key="real_page", max_visible_pages=3, width="stretch")
+    st.caption(f"Trang {st.session_state['real_page']} / {pages}")
+    with st.container(horizontal=True):
+        st.button(
+            "Trang trước",
+            key="real_previous",
+            width="stretch",
+            disabled=st.session_state["real_page"] == 1,
+            on_click=change_catalog_page,
+            args=(-1, pages),
+        )
+        st.button(
+            "Trang sau",
+            key="real_next",
+            width="stretch",
+            disabled=st.session_state["real_page"] == pages,
+            on_click=change_catalog_page,
+            args=(1, pages),
+        )
+
+
 def show_shop_catalog(root: Path) -> None:
     directory = root / "data/processed"
     path = directory / "shop_offers.csv"
@@ -94,20 +164,13 @@ def show_shop_catalog(root: Path) -> None:
         .max()
         .tz_convert("Asia/Ho_Chi_Minh")
     )
-    st.caption(
-        f"Giá công bố trên trang shop · Ghi nhận gần nhất: {latest:%d/%m/%Y %H:%M} (giờ Việt Nam). Mỗi dòng là một chào bán; cùng mẫu có thể xuất hiện ở nhiều shop."
+    query = st.text_input(
+        "Tên vợt / dòng vợt",
+        placeholder="Tìm tên vợt, ví dụ: 100ZZ…",
+        key="real_query",
+        icon=":material/search:",
     )
-    st.info(
-        "Giá là bản ghi tại thời điểm thu thập, có thể thay đổi theo phiên bản và khuyến mãi. Mở link shop để kiểm tra giá cuối cùng, tồn kho, cước và phí vận chuyển.",
-        icon=":material/storefront:",
-    )
-    with st.sidebar:
-        st.header("Tìm vợt tại các shop", anchor=False)
-        query = st.text_input(
-            "Tên vợt / dòng vợt",
-            placeholder="Astrox, Nanoflare, Axforce…",
-            key="real_query",
-        )
+    with st.expander("Ngân sách & bộ lọc", icon=":material/tune:"):
         shops = st.multiselect(
             "Shop", sorted(catalog["source"].unique()), key="real_shops"
         )
@@ -142,41 +205,57 @@ def show_shop_catalog(root: Path) -> None:
     if contact:
         within_budget |= filtered["price_vnd"].isna()
     filtered = filtered[within_budget]
-    cols = st.columns(4)
-    cols[0].metric("Chào bán thật", len(catalog), border=True)
-    cols[1].metric("Shop có dữ liệu", catalog["source"].nunique(), border=True)
-    cols[2].metric("Đáp ứng bộ lọc", len(filtered), border=True)
-    cols[3].metric(
-        "Đủ thông số để gợi ý", int(filtered["specs_complete"].sum()), border=True
+    budget_label = f"{budget:,.0f}".replace(",", ".")
+    st.caption(
+        f"{len(filtered)} kết quả · Ngân sách {budget_label} ₫ · {catalog['source'].nunique()} shop"
     )
+    with st.expander("Thông tin dữ liệu"):
+        st.caption(
+            f"Ghi nhận gần nhất: {latest:%d/%m/%Y %H:%M} (giờ Việt Nam). Mỗi dòng là một chào bán; cùng mẫu có thể xuất hiện ở nhiều shop."
+        )
+        st.caption(
+            "Giá có thể đổi theo phiên bản, cước và khuyến mãi. Mở link shop để kiểm tra giá cuối cùng, tồn kho và phí vận chuyển."
+        )
+        cols = st.columns(2)
+        cols[0].metric("Chào bán thật", len(catalog))
+        cols[1].metric("Shop có dữ liệu", catalog["source"].nunique())
+        cols = st.columns(2)
+        cols[0].metric("Đáp ứng bộ lọc", len(filtered))
+        cols[1].metric("Đủ thông số để gợi ý", int(filtered["specs_complete"].sum()))
     view = st.segmented_control(
         "Khám phá giá thật",
         ["Danh mục các shop", "Gợi ý có thông số", "Nguồn dữ liệu"],
         default="Danh mục các shop",
         key="real_view",
+        wrap=True,
     )
     if view == "Danh mục các shop":
-        st.subheader("Nhiều dòng vợt, nhiều nơi bán", anchor=False)
-        st.caption(
-            "Lọc theo giá thấp nhất shop niêm yết; khoảng giá giữ nguyên. Ô thông số trống nghĩa là chưa ghi nhận được từ shop. Các dòng có tên gần giống chưa chắc cùng phiên bản."
-        )
         if query.strip() and not over_budget.empty:
             lowest = f"{over_budget['price_vnd'].min():,.0f}".replace(",", ".")
             limit = f"{budget:,.0f}".replace(",", ".")
             st.info(
                 f"Có {len(over_budget)} chào bán khớp từ khóa đang bị ẩn vì vượt ngân sách {limit} ₫. "
                 f"Giá ghi nhận thấp nhất trong nhóm này là {lowest} ₫. "
-                "Tăng ngân sách ở thanh bên để xem các kết quả đó.",
+                "Mở Ngân sách & bộ lọc ở phía trên để tăng ngân sách.",
                 icon=":material/filter_alt:",
             )
         if filtered.empty:
             st.warning("Không có kết quả. Thử đổi từ khóa, shop hoặc ngân sách.")
             return
-        sort = st.selectbox(
-            "Sắp xếp",
-            ["Giá tăng dần", "Giá giảm dần", "Thương hiệu / tên vợt", "Shop"],
-            key="real_sort",
-        )
+        with st.expander("Sắp xếp & kiểu hiển thị"):
+            sort = st.selectbox(
+                "Sắp xếp",
+                ["Giá tăng dần", "Giá giảm dần", "Thương hiệu / tên vợt", "Shop"],
+                key="real_sort",
+            )
+            display = st.segmented_control(
+                "Cách xem",
+                ["Thẻ gọn", "Bảng chi tiết"],
+                default="Thẻ gọn",
+                key="real_display",
+                required=True,
+                wrap=True,
+            )
         fields = (
             ["brand", "model"]
             if sort == "Thương hiệu / tên vợt"
@@ -187,7 +266,20 @@ def show_shop_catalog(root: Path) -> None:
         ordered = filtered.sort_values(
             fields, ascending=sort != "Giá giảm dần", na_position="last"
         )
-        show_offer_table(ordered)
+        if display == "Bảng chi tiết":
+            show_offer_table(ordered)
+        else:
+            signature = (
+                query,
+                tuple(shops),
+                tuple(brands),
+                budget,
+                contact,
+                sort,
+                len(ordered),
+                path.stat().st_mtime_ns,
+            )
+            show_offer_cards(ordered, signature)
     elif view == "Gợi ý có thông số":
         st.subheader("Chỉ chấm điểm vợt có thông số từ shop", anchor=False)
         st.caption(
@@ -215,17 +307,20 @@ def show_shop_catalog(root: Path) -> None:
                 st.caption(
                     f"Shop công bố: {row['weight_raw']} · {row['balance_raw']} · {row['stiffness_raw']}"
                 )
-                st.write(row["reason"])
+                with st.expander("Vì sao phù hợp?"):
+                    st.write(row["reason"])
                 st.link_button(
                     "Xem giá và sản phẩm tại shop",
                     row["product_url"],
                     icon=":material/open_in_new:",
+                    width="stretch",
                 )
-        st.plotly_chart(
-            radar_chart(top, ideal_vector(prefs)),
-            width="stretch",
-            alt="Thông số quy đổi của ba chào bán phù hợp nhất so với mục tiêu.",
-        )
+        with st.expander("Biểu đồ so sánh"):
+            st.plotly_chart(
+                radar_chart(top, ideal_vector(prefs)),
+                width="stretch",
+                alt="Thông số quy đổi của ba chào bán phù hợp nhất so với mục tiêu.",
+            )
     elif view == "Nguồn dữ liệu":
         st.subheader("Phạm vi và thời điểm ghi nhận", anchor=False)
         status_path = directory / "shop_status.json"
@@ -247,12 +342,20 @@ def show_shop_catalog(root: Path) -> None:
             )
             .reset_index()
         )
-        st.dataframe(
-            summary,
-            hide_index=True,
-            width="stretch",
-            alt="Số lượng chào bán, thương hiệu, thông số và thời điểm thu thập theo shop.",
-        )
+        for _, shop in summary.iterrows():
+            with st.container(border=True):
+                st.markdown(f"**{shop['source']}**")
+                st.write(
+                    f"{shop['chao_ban']} chào bán · {shop['thuong_hieu']} thương hiệu"
+                )
+                st.caption(f"{shop['du_thong_so']} chào bán đủ thông số để chấm điểm")
+        with st.expander("Bảng tổng hợp chi tiết"):
+            st.dataframe(
+                summary,
+                hide_index=True,
+                width="stretch",
+                alt="Số lượng chào bán, thương hiệu, thông số và thời điểm thu thập theo shop.",
+            )
         st.caption(
             "Mới thu thập một phần danh mục mỗi shop, không bảo đảm bao phủ toàn bộ thị trường. Giá liên hệ không được tự thay bằng giá ước tính. Chưa có lịch sử giá thật theo ngày; phần lịch sử mô phỏng nằm riêng trong Demo thuật toán."
         )
