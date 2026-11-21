@@ -68,9 +68,37 @@ Kiểm thử offline gồm đọc HTML theo từng shop, giá khuyến mãi/kho�
 
 ## Docker
 
+Yêu cầu Docker Desktop ở chế độ Linux containers hoặc Docker Engine kèm Compose v2 hỗ trợ `--wait`. Sau khi clone repository và mở terminal ở thư mục dự án, khởi động bằng một lệnh:
+
 ```sh
-docker build -t racket-pro .
-docker run --rm -p 8501:8501 racket-pro
+docker compose up --build --wait
 ```
 
-Mở http://localhost:8501. Cấu hình giao diện ở `.streamlit/config.toml`, mã ứng dụng ở `app/`, thuật toán và bộ lấy dữ liệu ở `src/racket_rec/`, các bản ghi dữ liệu ở `data/`.
+Mở http://localhost:8501. Docker cài các gói Python khi build. Nếu cổng 8501 đã được dùng, sao chép `.env.example` thành `.env`, đổi `APP_PORT` và chạy lại lệnh. Khi đó truy cập theo cổng mới. Phiên bản này lưu danh mục dưới dạng CSV và JSON, nên Compose chỉ có dịch vụ Streamlit và cấu hình chạy mặc định không yêu cầu mật khẩu.
+
+### Vận hành
+
+Chạy các lệnh sau bằng Bash (Git Bash hoặc WSL trên Windows). Hãy khởi động dự án ít nhất một lần trước khi sao lưu.
+
+```bash
+bash manage.sh start
+bash manage.sh stop
+bash manage.sh backup
+```
+
+`stop` gỡ container và mạng của Compose, đồng thời giữ volume. `backup` đọc volume bằng container tạm và xuất bản nén `backups/catalog-*.tar.gz` trên máy chủ, kể cả sau khi đã dừng ứng dụng. Chạy sao lưu sau khi lệnh cập nhật giá hoàn tất để các tệp danh mục và trạng thái cùng phản ánh một lần cập nhật. Có thể kiểm tra nội dung bằng `tar -tzf backups/TEN_FILE.tar.gz`.
+
+Để cập nhật giá ngay trong volume khi ứng dụng đang chạy:
+
+```sh
+docker compose exec -e PYTHONPATH=/app/src app python -m racket_rec.live_catalog --pages 10 --details 30
+```
+
+### Cách cấu hình hoạt động
+
+- `FROM python:3.11-slim` dùng bản Python 3.11 với nền Debian gọn. `COPY requirements.txt` trước mã nguồn giúp Docker dùng lại lớp cài thư viện khi chỉ sửa mã ứng dụng. `--no-cache-dir` bỏ cache tải gói của pip trong image. Image tag và khoảng phiên bản trong `requirements.txt` có thể nhận bản cập nhật khi build lại.
+- `USER app` chạy Streamlit với UID 10001. `COPY --chown=app:app data/ data/` cấp quyền ghi dữ liệu cho tài khoản đó. Ba thư mục mã và cấu hình được sao chép riêng để giới hạn nội dung image.
+- `CMD` chạy Streamlit trên `0.0.0.0:8501` bên trong container. Compose công bố cổng trên `127.0.0.1` của máy chủ. `HEALTHCHECK` kiểm tra HTTP của Streamlit và `--wait` chờ kiểm tra thành công trước khi trả quyền điều khiển cho terminal.
+- `catalog_data:/app/data` gắn volume tại nơi ứng dụng đọc và ghi dữ liệu. Docker sao chép danh mục đi kèm image vào volume trống lần đầu. Nếu volume đã có dữ liệu, build image mới vẫn dùng dữ liệu trong volume đó. `docker compose down -v` xóa volume của dự án.
+- `.dockerignore` loại môi trường ảo, cache, bản sao lưu và tệp bí mật khỏi dữ liệu gửi sang trình build. `.env.example` ghi lại biến cấu hình có thể tùy chỉnh.
+- `set -euo pipefail` giúp script báo lỗi sớm. `-T` tắt terminal giả để chuyển nguyên dòng dữ liệu nhị phân từ `tar` về máy chủ. Script chỉ đặt đuôi `.tar.gz` sau khi lệnh sao lưu thành công.
